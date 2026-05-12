@@ -8,7 +8,7 @@ If a subskill cannot finish with 'succeeded', it does not block the skill_parall
 
 As soon as one skill finishes, this skill drops out of the control hierarchy. **This means that the control hierarchy gets updated, resulting in a potentially fundamentally different robot behavior (due to the projection).**
 
-Defined at line 228 of file :doc:`models/coordination.xml <../model_files/pitasc_library/models/coordination_xml>` in package **pitasc_library**.
+Defined at line 263 of file :doc:`models/coordination.xml <../model_files/pitasc_library/models/coordination_xml>` in package **pitasc_library**.
 
 Meta data
 =========

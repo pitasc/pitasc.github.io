@@ -6,10 +6,11 @@ Model definitions
 -----------------
 
 * line 67: :doc:`script_temp_frame <../../../scripts/script_temp_frame>`
-* line 119: :doc:`script_set_frame <../../../scripts/script_set_frame>`
-* line 163: :doc:`script_set_frame_rotvec <../../../scripts/script_set_frame_rotvec>`
-* line 173: :doc:`script_temp_frame_from_force <../../../scripts/script_temp_frame_from_force>`
-* line 208: :doc:`script_sinus_frame <../../../scripts/script_sinus_frame>`
+* line 120: :doc:`script_set_frame <../../../scripts/script_set_frame>`
+* line 165: :doc:`script_set_frames_from_yaml <../../../scripts/script_set_frames_from_yaml>`
+* line 194: :doc:`script_set_frame_rotvec <../../../scripts/script_set_frame_rotvec>`
+* line 204: :doc:`script_temp_frame_from_force <../../../scripts/script_temp_frame_from_force>`
+* line 245: :doc:`script_sinus_frame <../../../scripts/script_sinus_frame>`
 
 File contents
 -------------
@@ -18,4 +19,4 @@ File contents
 .. literalinclude:: geometry.xml
     :language: xml
     :linenos:
-    :emphasize-lines: 67,119,163,173,208
+    :emphasize-lines: 67,120,165,194,204,245

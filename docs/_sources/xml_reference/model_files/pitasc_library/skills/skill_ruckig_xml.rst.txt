@@ -1,0 +1,18 @@
+========================================
+pitasc_library - skills/skill_ruckig.xml
+========================================
+
+Model definitions
+-----------------
+
+* line 8: :doc:`skill_lin_time_optimal_ruckig <../../../skills/skill_lin_time_optimal_ruckig>`
+* line 243: :doc:`skill_guarded_lin_ruckig <../../../skills/skill_guarded_lin_ruckig>`
+
+File contents
+-------------
+
+
+.. literalinclude:: skill_ruckig.xml
+    :language: xml
+    :linenos:
+    :emphasize-lines: 8,243

@@ -2,7 +2,8 @@
 script_temp_frame
 =================
 
-Creates a temporary frame that lives as long as the parent skill is active.
+Creates a temporary frame that lives as long as the parent
+skill is active.
 
 Defined at line 67 of file :doc:`scripts/geometry.xml <../model_files/pitasc_library/scripts/geometry_xml>` in package **pitasc_library**.
 

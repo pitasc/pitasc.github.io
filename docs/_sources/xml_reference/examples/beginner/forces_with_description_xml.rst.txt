@@ -1,0 +1,31 @@
+===========================
+forces_with_description.xml
+===========================
+
+This example application shows the usage of some force skills.
+Move to a target, establishes a contact, pushes for some seconds,
+keeps on pushing while moving in another direction (slide), returns to the initial target
+
+Models used
+-----------
+
+* :doc:`../../monitors/monitor_duration`: lines 78, 125, 169, 283
+* :doc:`../../skills/skill_app`: lines 36, 202, 241
+* :doc:`../../skills/skill_guarded_approach`: lines 59, 225, 264
+* :doc:`../../skills/skill_guarded_lin`: lines 138
+* :doc:`../../skills/skill_guarded_slide`: lines 109
+* :doc:`../../skills/skill_insert`: lines 155
+* :doc:`../../skills/skill_lin`: lines 53, 132, 184, 219, 258
+* :doc:`../../skills/skill_push`: lines 68, 273
+* :doc:`../../skills/skill_push_duration`: lines 84, 289
+* :doc:`../../skills/skill_push_settle`: lines 95
+* :doc:`../../skills/skill_relative_ptp`: lines 49, 215, 254
+
+File contents
+-------------
+
+
+.. literalinclude:: forces_with_description.xml
+    :language: xml
+    :linenos:
+    :emphasize-lines: 258,132,68,264,202,138,78,273,84,215,155,219,283,95,225,289,36,169,109,241,49,53,184,59,125,254

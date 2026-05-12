@@ -6,15 +6,15 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>skill_lin_time_optimal &mdash; pitasc master documentation</title>
+  <title>skill_lin_time_optimal &mdash; pitasc  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=48f0e2ba"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
       <script src="../../_static/doctools.js?v=888ff710"></script>
       <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -22,7 +22,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="skill_lin_trajectory" href="skill_lin_trajectory.html" />
+    <link rel="next" title="skill_lin_time_optimal_ruckig" href="skill_lin_time_optimal_ruckig.html" />
     <link rel="prev" title="skill_lin" href="skill_lin.html" /> 
 </head>
 
@@ -80,6 +80,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="skill_lin_time_optimal_ruckig.html">skill_lin_time_optimal_ruckig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_lin_trajectory.html">skill_lin_trajectory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_lin_trajectory_base.html">skill_lin_trajectory_base</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_lin_trajectory_pd.html">skill_lin_trajectory_pd</a></li>
@@ -143,7 +144,8 @@
              
   <section id="skill-lin-time-optimal">
 <h1>skill_lin_time_optimal<a class="headerlink" href="#skill-lin-time-optimal" title="Permalink to this heading"></a></h1>
-<p>LIN movement from the current pose to the target. Follows a time-optimal trajectory with constant acceleration.</p>
+<p>LIN movement from the current pose to the target. Follows a
+time-optimal trajectory with constant acceleration.</p>
 <p>Defined at line 8 of file <a class="reference internal" href="../model_files/pitasc_library/skills/skill_lin_time_optimal_xml.html"><span class="doc">skills/skill_lin_time_optimal.xml</span></a> in package <strong>pitasc_library</strong>.</p>
 <section id="meta-data">
 <h2>Meta data<a class="headerlink" href="#meta-data" title="Permalink to this heading"></a></h2>
@@ -197,7 +199,9 @@
 <div class="line-block">
 <div class="line"><strong>target_offsets</strong> : csv:float</div>
 <div class="line-block">
-<div class="line">Offsets of the axes to be aligned. Must be the same number of values as for ‘axes’. If no value is provided, 0 is used for all axes.</div>
+<div class="line">Offsets of the axes to be aligned. Must be the same</div>
+<div class="line">number of values as for ‘axes’. If no value is provided, 0 is used for</div>
+<div class="line">all axes.</div>
 </div>
 </div>
 <div class="line-block">
@@ -226,6 +230,20 @@
 <div class="line-block">
 <div class="line">Max angular acceleration.</div>
 <div class="line"><strong>Default</strong>: 3.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>max_linear_jerk</strong> : float</div>
+<div class="line-block">
+<div class="line">Max linear jerk.</div>
+<div class="line"><strong>Default</strong>: 1.00001</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>max_angular_jerk</strong> : float</div>
+<div class="line-block">
+<div class="line">Max angular jerk.</div>
+<div class="line"><strong>Default</strong>: 1.0001</div>
 </div>
 </div>
 <div class="line-block">
@@ -272,35 +290,41 @@
 <div class="line-block">
 <div class="line"><strong>trajectory_duration</strong> : float</div>
 <div class="line-block">
-<div class="line">Duration of the trajectory in [s]. ‘0’ means as fast as possible. Is expanded accordingly if in conflict with maximal linear veloctiy.</div>
+<div class="line">Duration of the trajectory in [s]. ‘0’ means as</div>
+<div class="line">fast as possible. Is expanded accordingly if in conflict with maximal</div>
+<div class="line">linear veloctiy.</div>
 <div class="line"><strong>Default</strong>: False</div>
 </div>
 </div>
 <div class="line-block">
 <div class="line"><strong>linear_controller_gain</strong> : float</div>
 <div class="line-block">
-<div class="line">Specifies the approx. linear gain of the controller transfer function for Cartesian positions (i.e. x,y and z).</div>
+<div class="line">Specifies the approx. linear gain of the controller</div>
+<div class="line">transfer function for Cartesian positions (i.e. x,y and z).</div>
 <div class="line"><strong>Default</strong>: 3.0</div>
 </div>
 </div>
 <div class="line-block">
 <div class="line"><strong>angular_controller_gain</strong> : float</div>
 <div class="line-block">
-<div class="line">Specifies the approx. angular gain of the controller transfer function for Cartesian angles (i.e. a,b and c).</div>
+<div class="line">Specifies the approx. angular gain of the</div>
+<div class="line">controller transfer function for Cartesian angles (i.e. a,b and c).</div>
 <div class="line"><strong>Default</strong>: 3.0</div>
 </div>
 </div>
 <div class="line-block">
 <div class="line"><strong>linear_ff_controller_gain</strong> : float</div>
 <div class="line-block">
-<div class="line">Specifies the linear velocity feed-forward gain of the controller</div>
+<div class="line">Specifies the linear velocity feed-forward gain of</div>
+<div class="line">the controller</div>
 <div class="line"><strong>Default</strong>: 0.7</div>
 </div>
 </div>
 <div class="line-block">
 <div class="line"><strong>angular_ff_controller_gain</strong> : float</div>
 <div class="line-block">
-<div class="line">Specifies the angular velocity feed-forward gain of the controller</div>
+<div class="line">Specifies the angular velocity feed-forward gain of</div>
+<div class="line">the controller</div>
 <div class="line"><strong>Default</strong>: 0.7</div>
 </div>
 </div>
@@ -340,6 +364,7 @@
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <p><strong>skill_lin_time_optimal</strong> is used in the following examples:</p>
 <ul class="simple">
+<li><p><a class="reference internal" href="../examples/skills/lin_time_optimal_ruckig_xml.html"><span class="doc">lin_time_optimal_ruckig.xml</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/skills/lin_time_optimal_xml.html"><span class="doc">lin_time_optimal.xml</span></a></p></li>
 </ul>
 </section>
@@ -350,14 +375,14 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="skill_lin.html" class="btn btn-neutral float-left" title="skill_lin" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="skill_lin_trajectory.html" class="btn btn-neutral float-right" title="skill_lin_trajectory" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="skill_lin_time_optimal_ruckig.html" class="btn btn-neutral float-right" title="skill_lin_time_optimal_ruckig" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2025, Pitasc Team.
-      <span class="lastupdated">Last updated on Aug 29, 2025, 9:11:24 AM.
+    <p>&#169; Copyright 2026, Pitasc Team.
+      <span class="lastupdated">Last updated on May 12, 2026, 11:17:55 AM.
       </span></p>
   </div>
 

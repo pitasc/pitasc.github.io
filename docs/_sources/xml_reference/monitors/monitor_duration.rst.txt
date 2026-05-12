@@ -35,6 +35,7 @@ Examples
 **monitor_duration** is used in the following examples:
 
 * :doc:`../examples/beginner/forces_feedforward_xml`
+* :doc:`../examples/beginner/forces_with_description_xml`
 * :doc:`../examples/beginner/forces_xml`
 * :doc:`../examples/beginner/move_math_parser_xml`
 * :doc:`../examples/beginner/simple_count_xml`
@@ -44,6 +45,7 @@ Examples
 * :doc:`../examples/dual_robot/bounds_dual_robot_xml`
 * :doc:`../examples/monitors/sync_xml`
 * :doc:`../examples/rosless/forces_rosless_xml`
+* :doc:`../examples/rosless/frames_from_yaml_rosless_xml`
 * :doc:`../examples/scripts/temp_frame_xml`
 * :doc:`../examples/skills/bound_example_xml`
 * :doc:`../examples/skills/forces_pid_xml`

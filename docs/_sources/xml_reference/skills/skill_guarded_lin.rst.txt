@@ -55,6 +55,11 @@ Parameters
   |  The directions that are monitored for occuring forces (can be multiple axes).
   |  **Default**: x
 
+  | **event** : string
+  |  The event to be triggered when force limit is
+  |  reached.
+  |  **Default**: succeeded
+
 **Expert** parameters:
 
   | **skill_name** : string
@@ -105,5 +110,7 @@ Examples
 
 **skill_guarded_lin** is used in the following examples:
 
+* :doc:`../examples/beginner/forces_with_description_xml`
 * :doc:`../examples/beginner/forces_xml`
 * :doc:`../examples/rosless/forces_rosless_xml`
+* :doc:`../examples/rosless/frames_from_yaml_rosless_xml`

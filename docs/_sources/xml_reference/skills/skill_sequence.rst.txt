@@ -62,6 +62,7 @@ Examples
 
 **skill_sequence** is used in the following examples:
 
+* :doc:`../examples/advanced/frames_from_yaml_xml`
 * :doc:`../examples/advanced/strings_xml`
 * :doc:`../examples/beginner/forces_feedforward_xml`
 * :doc:`../examples/beginner/forces_xml`
@@ -91,6 +92,7 @@ Examples
 * :doc:`../examples/monitors/sync_xml`
 * :doc:`../examples/monitors/user_confirm_xml`
 * :doc:`../examples/rosless/forces_rosless_xml`
+* :doc:`../examples/rosless/frames_from_yaml_rosless_xml`
 * :doc:`../examples/rosless/simple_move_rosless_xml`
 * :doc:`../examples/scripts/frame_editor_xml`
 * :doc:`../examples/scripts/io_xml`
@@ -101,9 +103,12 @@ Examples
 * :doc:`../examples/skills/conical_helix_xml`
 * :doc:`../examples/skills/cylindrical_helix_xml`
 * :doc:`../examples/skills/forces_pid_xml`
+* :doc:`../examples/skills/guarded_sequence_xml`
+* :doc:`../examples/skills/lin_time_optimal_ruckig_xml`
 * :doc:`../examples/skills/lin_time_optimal_xml`
 * :doc:`../examples/skills/lin_trajectory_xml`
 * :doc:`../examples/skills/partial_lin_xml`
 * :doc:`../examples/skills/position_pid_xml`
 * :doc:`../examples/skills/ptp_trajectory_xml`
+* :doc:`../examples/skills/ruckig_guarded_lin_xml`
 * :doc:`../examples/skills/spherical_velocity_xml`

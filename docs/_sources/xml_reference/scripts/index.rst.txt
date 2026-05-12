@@ -27,12 +27,14 @@ frames
   : Sets a new frame.
 * :doc:`script_set_frame_rotvec`
   : Sets a new frame (pose with rotation vector).
+* :doc:`script_set_frames_from_yaml`
+  : Sets a new frame.
 * :doc:`script_sinus_frame`
-  : Creates a temporary frame that lives as long as the parent skill is active. The frame moves in the given coordinate with a sinus
+  : Creates a temporary frame that lives as long as the parent
 * :doc:`script_temp_frame`
-  : Creates a temporary frame that lives as long as the parent skill is active.
+  : Creates a temporary frame that lives as long as the parent
 * :doc:`script_temp_frame_from_force`
-  : Creates a temporary frame from the current force measurements.
+  : Creates a temporary frame from the current force
 
 .. toctree::
     :hidden:
@@ -47,6 +49,7 @@ frames
     script_frame_editor_set_parent
     script_set_frame
     script_set_frame_rotvec
+    script_set_frames_from_yaml
     script_sinus_frame
     script_temp_frame
     script_temp_frame_from_force

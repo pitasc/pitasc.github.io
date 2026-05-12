@@ -9,8 +9,14 @@ Skills
 composition
 -----------
 
+* :doc:`skill_app`
+  : Skill that denotes an application and provides additional
 * :doc:`skill_concurrency`
   : Hierarchy of skills which are executed simultaneously.
+* :doc:`skill_guarded_sequence`
+  : A skill that stops execution of the sub-skills if a
+* :doc:`skill_guarded_sequence_with_start`
+  : A guarded skill sequence that also as some startup skills
 * :doc:`skill_parallel`
   : Hierarchy of skills which are executed simultaneously. Ends with 'succeeded' only if **all** subskills triggered 'succeeded'.
 * :doc:`skill_sequence`
@@ -22,7 +28,10 @@ composition
     :hidden:
     :maxdepth: 2
 
+    skill_app
     skill_concurrency
+    skill_guarded_sequence
+    skill_guarded_sequence_with_start
     skill_parallel
     skill_sequence
     skill_statechart
@@ -61,7 +70,9 @@ position_controlled
 * :doc:`skill_lin`
   : Aligns the tool frame with a target frame
 * :doc:`skill_lin_time_optimal`
-  : LIN movement from the current pose to the target. Follows a time-optimal trajectory with constant acceleration.
+  : LIN movement from the current pose to the target. Follows a
+* :doc:`skill_lin_time_optimal_ruckig`
+  : LIN movement from the current pose to the target. Follows a
 * :doc:`skill_lin_trajectory`
   : Moves along given blending points with blending distances to the target frame.
 * :doc:`skill_lin_trajectory_base`
@@ -111,6 +122,7 @@ position_controlled
     skill_joint_space_tracking
     skill_lin
     skill_lin_time_optimal
+    skill_lin_time_optimal_ruckig
     skill_lin_trajectory
     skill_lin_trajectory_base
     skill_lin_trajectory_pd
@@ -139,6 +151,12 @@ force_controlled
   : A skill that moves along a fixed frame axis until it measures a certain force
 * :doc:`skill_guarded_lin`
   : Causes a linear motion until a specified force value is reached
+* :doc:`skill_guarded_lin_ruckig`
+  : Causes a linear motion with the ruckig trajectory generator
+* :doc:`skill_guarded_sequence`
+  : A skill that stops execution of the sub-skills if a
+* :doc:`skill_guarded_sequence_with_start`
+  : A guarded skill sequence that also as some startup skills
 * :doc:`skill_guarded_slide`
   : A skill that moves along a fixed frame axis until it measures a certain force
 * :doc:`skill_insert`
@@ -167,6 +185,9 @@ force_controlled
     skill_force
     skill_guarded_approach
     skill_guarded_lin
+    skill_guarded_lin_ruckig
+    skill_guarded_sequence
+    skill_guarded_sequence_with_start
     skill_guarded_slide
     skill_insert
     skill_log_force

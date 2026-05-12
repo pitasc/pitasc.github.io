@@ -6,15 +6,15 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skills &mdash; pitasc master documentation</title>
+  <title>Skills &mdash; pitasc  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=48f0e2ba"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
       <script src="../../_static/doctools.js?v=888ff710"></script>
       <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -22,7 +22,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="skill_concurrency" href="skill_concurrency.html" />
+    <link rel="next" title="skill_app" href="skill_app.html" />
     <link rel="prev" title="Setup KUKA Robot" href="../../user_guide/setup_kuka.html" /> 
 </head>
 
@@ -58,7 +58,10 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Skills</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#composition">composition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="skill_app.html">skill_app</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_concurrency.html">skill_concurrency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="skill_guarded_sequence.html">skill_guarded_sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="skill_guarded_sequence_with_start.html">skill_guarded_sequence_with_start</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_parallel.html">skill_parallel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_sequence.html">skill_sequence</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_statechart.html">skill_statechart</a></li>
@@ -81,6 +84,7 @@
 <li class="toctree-l3"><a class="reference internal" href="skill_joint_space_tracking.html">skill_joint_space_tracking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_lin.html">skill_lin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_lin_time_optimal.html">skill_lin_time_optimal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="skill_lin_time_optimal_ruckig.html">skill_lin_time_optimal_ruckig</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_lin_trajectory.html">skill_lin_trajectory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_lin_trajectory_base.html">skill_lin_trajectory_base</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_lin_trajectory_pd.html">skill_lin_trajectory_pd</a></li>
@@ -103,6 +107,9 @@
 <li class="toctree-l3"><a class="reference internal" href="skill_force.html">skill_force</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_guarded_approach.html">skill_guarded_approach</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_guarded_lin.html">skill_guarded_lin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="skill_guarded_lin_ruckig.html">skill_guarded_lin_ruckig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="skill_guarded_sequence.html">skill_guarded_sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="skill_guarded_sequence_with_start.html">skill_guarded_sequence_with_start</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_guarded_slide.html">skill_guarded_slide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_insert.html">skill_insert</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_log_force.html">skill_log_force</a></li>
@@ -191,8 +198,14 @@
 <section id="composition">
 <h2>composition<a class="headerlink" href="#composition" title="Permalink to this heading"></a></h2>
 <ul class="simple">
+<li><p><a class="reference internal" href="skill_app.html"><span class="doc">skill_app</span></a>
+: Skill that denotes an application and provides additional</p></li>
 <li><p><a class="reference internal" href="skill_concurrency.html"><span class="doc">skill_concurrency</span></a>
 : Hierarchy of skills which are executed simultaneously.</p></li>
+<li><p><a class="reference internal" href="skill_guarded_sequence.html"><span class="doc">skill_guarded_sequence</span></a>
+: A skill that stops execution of the sub-skills if a</p></li>
+<li><p><a class="reference internal" href="skill_guarded_sequence_with_start.html"><span class="doc">skill_guarded_sequence_with_start</span></a>
+: A guarded skill sequence that also as some startup skills</p></li>
 <li><p><a class="reference internal" href="skill_parallel.html"><span class="doc">skill_parallel</span></a>
 : Hierarchy of skills which are executed simultaneously. Ends with ‘succeeded’ only if <strong>all</strong> subskills triggered ‘succeeded’.</p></li>
 <li><p><a class="reference internal" href="skill_sequence.html"><span class="doc">skill_sequence</span></a>
@@ -237,7 +250,9 @@
 <li><p><a class="reference internal" href="skill_lin.html"><span class="doc">skill_lin</span></a>
 : Aligns the tool frame with a target frame</p></li>
 <li><p><a class="reference internal" href="skill_lin_time_optimal.html"><span class="doc">skill_lin_time_optimal</span></a>
-: LIN movement from the current pose to the target. Follows a time-optimal trajectory with constant acceleration.</p></li>
+: LIN movement from the current pose to the target. Follows a</p></li>
+<li><p><a class="reference internal" href="skill_lin_time_optimal_ruckig.html"><span class="doc">skill_lin_time_optimal_ruckig</span></a>
+: LIN movement from the current pose to the target. Follows a</p></li>
 <li><p><a class="reference internal" href="skill_lin_trajectory.html"><span class="doc">skill_lin_trajectory</span></a>
 : Moves along given blending points with blending distances to the target frame.</p></li>
 <li><p><a class="reference internal" href="skill_lin_trajectory_base.html"><span class="doc">skill_lin_trajectory_base</span></a>
@@ -283,6 +298,12 @@
 : A skill that moves along a fixed frame axis until it measures a certain force</p></li>
 <li><p><a class="reference internal" href="skill_guarded_lin.html"><span class="doc">skill_guarded_lin</span></a>
 : Causes a linear motion until a specified force value is reached</p></li>
+<li><p><a class="reference internal" href="skill_guarded_lin_ruckig.html"><span class="doc">skill_guarded_lin_ruckig</span></a>
+: Causes a linear motion with the ruckig trajectory generator</p></li>
+<li><p><a class="reference internal" href="skill_guarded_sequence.html"><span class="doc">skill_guarded_sequence</span></a>
+: A skill that stops execution of the sub-skills if a</p></li>
+<li><p><a class="reference internal" href="skill_guarded_sequence_with_start.html"><span class="doc">skill_guarded_sequence_with_start</span></a>
+: A guarded skill sequence that also as some startup skills</p></li>
 <li><p><a class="reference internal" href="skill_guarded_slide.html"><span class="doc">skill_guarded_slide</span></a>
 : A skill that moves along a fixed frame axis until it measures a certain force</p></li>
 <li><p><a class="reference internal" href="skill_insert.html"><span class="doc">skill_insert</span></a>
@@ -375,14 +396,14 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../../user_guide/setup_kuka.html" class="btn btn-neutral float-left" title="Setup KUKA Robot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="skill_concurrency.html" class="btn btn-neutral float-right" title="skill_concurrency" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="skill_app.html" class="btn btn-neutral float-right" title="skill_app" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2025, Pitasc Team.
-      <span class="lastupdated">Last updated on Aug 29, 2025, 9:11:24 AM.
+    <p>&#169; Copyright 2026, Pitasc Team.
+      <span class="lastupdated">Last updated on May 12, 2026, 11:17:55 AM.
       </span></p>
   </div>
 

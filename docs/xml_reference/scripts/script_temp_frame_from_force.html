@@ -6,15 +6,15 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>script_temp_frame_from_force &mdash; pitasc master documentation</title>
+  <title>script_temp_frame_from_force &mdash; pitasc  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=48f0e2ba"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
       <script src="../../_static/doctools.js?v=888ff710"></script>
       <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -69,6 +69,7 @@
 <li class="toctree-l3"><a class="reference internal" href="script_frame_editor_set_parent.html">script_frame_editor_set_parent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="script_set_frame.html">script_set_frame</a></li>
 <li class="toctree-l3"><a class="reference internal" href="script_set_frame_rotvec.html">script_set_frame_rotvec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="script_set_frames_from_yaml.html">script_set_frames_from_yaml</a></li>
 <li class="toctree-l3"><a class="reference internal" href="script_sinus_frame.html">script_sinus_frame</a></li>
 <li class="toctree-l3"><a class="reference internal" href="script_temp_frame.html">script_temp_frame</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">script_temp_frame_from_force</a><ul>
@@ -123,11 +124,14 @@
              
   <section id="script-temp-frame-from-force">
 <h1>script_temp_frame_from_force<a class="headerlink" href="#script-temp-frame-from-force" title="Permalink to this heading"></a></h1>
-<p>Creates a temporary frame from the current force measurements.</p>
-<p>The z axis points in the opposite direction of the measured force vector (the usual definition for force control with pitasc).
-The frame’s position and direction will be updated as long as the script is active.</p>
+<p>Creates a temporary frame from the current force
+measurements.</p>
+<p>The z axis points in the opposite direction of the measured force vector (the
+usual definition for force control with pitasc).
+The frame’s position and direction will be updated as long as the script is
+active.</p>
 <p>Includes possibility to filter the input with a first order low pass.</p>
-<p>Defined at line 173 of file <a class="reference internal" href="../model_files/pitasc_library/scripts/geometry_xml.html"><span class="doc">scripts/geometry.xml</span></a> in package <strong>pitasc_library</strong>.</p>
+<p>Defined at line 204 of file <a class="reference internal" href="../model_files/pitasc_library/scripts/geometry_xml.html"><span class="doc">scripts/geometry.xml</span></a> in package <strong>pitasc_library</strong>.</p>
 <section id="meta-data">
 <h2>Meta data<a class="headerlink" href="#meta-data" title="Permalink to this heading"></a></h2>
 <blockquote>
@@ -181,7 +185,9 @@ The frame’s position and direction will be updated as long as the script is ac
 <div class="line-block">
 <div class="line"><strong>low_pass_filter_gain</strong> : float</div>
 <div class="line-block">
-<div class="line">First order low pass filter gain (exponential filter). Must be in interval [0:1]. 0 means taking only the previous value, 1 means taking only the new value.</div>
+<div class="line">First order low pass filter gain (exponential</div>
+<div class="line">filter). Must be in interval [0:1]. 0 means taking only the previous</div>
+<div class="line">value, 1 means taking only the new value.</div>
 <div class="line"><strong>Default</strong>: 1.0</div>
 </div>
 </div>
@@ -231,8 +237,8 @@ The frame’s position and direction will be updated as long as the script is ac
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2025, Pitasc Team.
-      <span class="lastupdated">Last updated on Aug 29, 2025, 9:11:24 AM.
+    <p>&#169; Copyright 2026, Pitasc Team.
+      <span class="lastupdated">Last updated on May 12, 2026, 11:17:55 AM.
       </span></p>
   </div>
 

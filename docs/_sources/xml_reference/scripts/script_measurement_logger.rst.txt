@@ -53,5 +53,6 @@ Examples
 **script_measurement_logger** is used in the following examples:
 
 * :doc:`../examples/scripts/logging_xml`
+* :doc:`../examples/skills/lin_time_optimal_ruckig_xml`
 * :doc:`../examples/skills/lin_trajectory_xml`
 * :doc:`../examples/skills/ptp_trajectory_xml`

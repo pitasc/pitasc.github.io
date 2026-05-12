@@ -1,0 +1,31 @@
+============================
+frames_from_yaml_rosless.xml
+============================
+
+This example application shows how to load frames from a yaml file to use with pitasc
+
+Models used
+-----------
+
+* :doc:`../../monitors/monitor_duration`: lines 101, 151, 198
+* :doc:`../../scripts/script_set_frames_from_yaml`: lines 48, 66
+* :doc:`../../skills/skill_guarded_approach`: lines 81
+* :doc:`../../skills/skill_guarded_lin`: lines 166
+* :doc:`../../skills/skill_guarded_slide`: lines 135
+* :doc:`../../skills/skill_idle_duration`: lines 63
+* :doc:`../../skills/skill_insert`: lines 184
+* :doc:`../../skills/skill_lin`: lines 74, 159, 214
+* :doc:`../../skills/skill_push`: lines 91
+* :doc:`../../skills/skill_push_duration`: lines 108
+* :doc:`../../skills/skill_push_settle`: lines 120
+* :doc:`../../skills/skill_relative_ptp`: lines 59
+* :doc:`../../skills/skill_sequence`: lines 44
+
+File contents
+-------------
+
+
+.. literalinclude:: frames_from_yaml_rosless.xml
+    :language: xml
+    :linenos:
+    :emphasize-lines: 66,198,135,74,81,214,151,91,120,159,101,166,108,44,48,184,59,63

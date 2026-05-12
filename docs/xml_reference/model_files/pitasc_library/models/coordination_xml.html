@@ -6,15 +6,15 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pitasc_library - models/coordination.xml &mdash; pitasc master documentation</title>
+  <title>pitasc_library - models/coordination.xml &mdash; pitasc  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=d75fae25" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
 
   
       <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=48f0e2ba"></script>
+      <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=b3ba4146"></script>
       <script src="../../../../_static/doctools.js?v=888ff710"></script>
       <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -102,8 +102,9 @@
 <li><p>line 122: skill_single_robot</p></li>
 <li><p>line 141: <a class="reference internal" href="../../../skills/skill_statechart.html"><span class="doc">skill_statechart</span></a></p></li>
 <li><p>line 172: <a class="reference internal" href="../../../skills/skill_sequence.html"><span class="doc">skill_sequence</span></a></p></li>
-<li><p>line 203: <a class="reference internal" href="../../../skills/skill_concurrency.html"><span class="doc">skill_concurrency</span></a></p></li>
-<li><p>line 228: <a class="reference internal" href="../../../skills/skill_parallel.html"><span class="doc">skill_parallel</span></a></p></li>
+<li><p>line 204: <a class="reference internal" href="../../../skills/skill_app.html"><span class="doc">skill_app</span></a></p></li>
+<li><p>line 238: <a class="reference internal" href="../../../skills/skill_concurrency.html"><span class="doc">skill_concurrency</span></a></p></li>
+<li><p>line 263: <a class="reference internal" href="../../../skills/skill_parallel.html"><span class="doc">skill_parallel</span></a></p></li>
 </ul>
 </section>
 <section id="file-contents">
@@ -310,64 +311,99 @@
 <span class="linenos">200</span><span class="w">            </span><span class="nt">&lt;/data&gt;</span>
 <span class="linenos">201</span><span class="w">        </span><span class="nt">&lt;/type&gt;</span>
 <span class="linenos">202</span>
-<span class="hll"><span class="linenos">203</span><span class="w">        </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;skill_concurrency&quot;</span><span class="w"> </span><span class="na">prototype=</span><span class="s">&quot;skill_single_robot&quot;</span><span class="nt">&gt;</span>
-</span><span class="linenos">204</span><span class="w">            </span><span class="nt">&lt;meta&gt;</span>
-<span class="linenos">205</span><span class="w">                </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Hierarchy<span class="w"> </span>of<span class="w"> </span>skills<span class="w"> </span>which<span class="w"> </span>are<span class="w"> </span>executed<span class="w"> </span>simultaneously.<span class="nt">&lt;/member&gt;</span>
-<span class="linenos">206</span><span class="w">                </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;categories&quot;</span><span class="nt">&gt;</span>composition<span class="nt">&lt;/member&gt;</span>
-<span class="linenos">207</span><span class="w">                </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;implementation&quot;</span><span class="nt">&gt;</span>
-<span class="linenos">208</span><span class="w">                    </span><span class="nt">&lt;clone</span><span class="w"> </span><span class="na">prototype=</span><span class="s">&quot;cpp&quot;</span><span class="nt">&gt;</span>
-<span class="linenos">209</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;lib&quot;</span><span class="nt">&gt;</span>cppitasc_skills<span class="nt">&lt;/member&gt;</span>
-<span class="linenos">210</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;class&quot;</span><span class="nt">&gt;</span>SkillHierarchy<span class="nt">&lt;/member&gt;</span>
-<span class="linenos">211</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;arguments&quot;</span><span class="nt">&gt;</span>skill_name,<span class="w"> </span>loops,<span class="w"> </span>tasks,<span class="w"> </span>bounds,
-<span class="linenos">212</span><span class="w">                            </span>monitors,<span class="w"> </span>transitions,<span class="w"> </span>scripts,
-<span class="linenos">213</span><span class="w">                            </span>skills,<span class="w"> </span>robot
-<span class="linenos">214</span><span class="w">                        </span><span class="nt">&lt;/member&gt;</span>
-<span class="linenos">215</span><span class="w">                    </span><span class="nt">&lt;/clone&gt;</span>
-<span class="linenos">216</span><span class="w">                </span><span class="nt">&lt;/member&gt;</span>
-<span class="linenos">217</span><span class="w">            </span><span class="nt">&lt;/meta&gt;</span>
-<span class="linenos">218</span><span class="w">            </span><span class="nt">&lt;data&gt;</span>
-<span class="linenos">219</span><span class="w">                </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;skills&quot;</span><span class="w"> </span><span class="na">data_type=</span><span class="s">&quot;list:skill&quot;</span><span class="w"> </span><span class="na">prototype=</span><span class="s">&quot;base&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">203</span>
+<span class="hll"><span class="linenos">204</span><span class="w">        </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;skill_app&quot;</span><span class="w"> </span><span class="na">prototype=</span><span class="s">&quot;skill_sequence&quot;</span><span class="nt">&gt;</span>
+</span><span class="linenos">205</span><span class="w">            </span><span class="nt">&lt;meta&gt;</span>
+<span class="linenos">206</span><span class="w">                </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Skill<span class="w"> </span>that<span class="w"> </span>denotes<span class="w"> </span>an<span class="w"> </span>application<span class="w"> </span>and<span class="w"> </span>provides<span class="w"> </span>additional
+<span class="linenos">207</span><span class="w">                    </span>information.<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">208</span><span class="w">                </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;categories&quot;</span><span class="nt">&gt;</span>composition<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">209</span><span class="w">            </span><span class="nt">&lt;/meta&gt;</span>
+<span class="linenos">210</span><span class="w">            </span><span class="nt">&lt;data&gt;</span>
+<span class="linenos">211</span><span class="w">                </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;tooltip&quot;</span><span class="w"> </span><span class="na">prototype=</span><span class="s">&quot;string_parameter&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">212</span><span class="w">                    </span><span class="nt">&lt;meta&gt;</span>
+<span class="linenos">213</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Tooltip<span class="w"> </span>for<span class="w"> </span>the<span class="w"> </span>skill.<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">214</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;visibility&quot;</span><span class="nt">&gt;</span>basic<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">215</span><span class="w">                    </span><span class="nt">&lt;/meta&gt;</span>
+<span class="linenos">216</span>
+<span class="linenos">217</span><span class="w">                    </span><span class="nt">&lt;data&gt;&lt;/data&gt;</span>
+<span class="linenos">218</span><span class="w">                </span><span class="nt">&lt;/type&gt;</span>
+<span class="linenos">219</span><span class="w">                </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;color&quot;</span><span class="w"> </span><span class="na">prototype=</span><span class="s">&quot;color&quot;</span><span class="nt">&gt;</span>
 <span class="linenos">220</span><span class="w">                    </span><span class="nt">&lt;meta&gt;</span>
-<span class="linenos">221</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Sub-skills<span class="w"> </span>that<span class="w"> </span>are<span class="w"> </span>executed<span class="w"> </span>simultaneously.<span class="nt">&lt;/member&gt;</span>
-<span class="linenos">222</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;visibility&quot;</span><span class="nt">&gt;</span>required<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">221</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Color<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>skill<span class="w"> </span>button.<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">222</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;visibility&quot;</span><span class="nt">&gt;</span>basic<span class="nt">&lt;/member&gt;</span>
 <span class="linenos">223</span><span class="w">                    </span><span class="nt">&lt;/meta&gt;</span>
-<span class="linenos">224</span><span class="w">                </span><span class="nt">&lt;/type&gt;</span>
-<span class="linenos">225</span><span class="w">            </span><span class="nt">&lt;/data&gt;</span>
-<span class="linenos">226</span><span class="w">        </span><span class="nt">&lt;/type&gt;</span>
-<span class="linenos">227</span>
-<span class="hll"><span class="linenos">228</span><span class="w">        </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;skill_parallel&quot;</span><span class="w"> </span><span class="na">prototype=</span><span class="s">&quot;skill_single_robot&quot;</span><span class="nt">&gt;</span>
-</span><span class="linenos">229</span><span class="w">            </span><span class="nt">&lt;meta&gt;</span>
-<span class="linenos">230</span><span class="w">                </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Hierarchy<span class="w"> </span>of<span class="w"> </span>skills<span class="w"> </span>which<span class="w"> </span>are<span class="w"> </span>executed<span class="w"> </span>simultaneously.<span class="w"> </span>Ends<span class="w"> </span>with<span class="w"> </span>&#39;succeeded&#39;<span class="w"> </span>only<span class="w"> </span>if<span class="w"> </span>**all**<span class="w"> </span>subskills<span class="w"> </span>triggered<span class="w"> </span>&#39;succeeded&#39;.
-<span class="linenos">231</span>
-<span class="linenos">232</span><span class="w">                </span>If<span class="w"> </span>a<span class="w"> </span>subskill<span class="w"> </span>cannot<span class="w"> </span>finish<span class="w"> </span>with<span class="w"> </span>&#39;succeeded&#39;,<span class="w"> </span>it<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>block<span class="w"> </span>the<span class="w"> </span>skill_parallel,<span class="w"> </span>except<span class="w"> </span>when<span class="w"> </span>there<span class="w"> </span>is<span class="w"> </span>no<span class="w"> </span>subskill<span class="w"> </span>that<span class="w"> </span>can<span class="w"> </span>trigger<span class="w"> </span>&#39;succeeded&#39;.
+<span class="linenos">224</span><span class="w">                    </span><span class="nt">&lt;data&gt;&lt;/data&gt;</span>
+<span class="linenos">225</span><span class="w">                </span><span class="nt">&lt;/type&gt;</span>
+<span class="linenos">226</span><span class="w">                </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;group&quot;</span><span class="w"> </span><span class="na">prototype=</span><span class="s">&quot;group&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">227</span><span class="w">                    </span><span class="nt">&lt;meta&gt;</span>
+<span class="linenos">228</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Grouping<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>skill.<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">229</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;visibility&quot;</span><span class="nt">&gt;</span>basic<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">230</span><span class="w">                    </span><span class="nt">&lt;/meta&gt;</span>
+<span class="linenos">231</span><span class="w">                    </span><span class="nt">&lt;data&gt;&lt;/data&gt;</span>
+<span class="linenos">232</span><span class="w">                </span><span class="nt">&lt;/type&gt;</span>
 <span class="linenos">233</span>
-<span class="linenos">234</span><span class="w">                </span>As<span class="w"> </span>soon<span class="w"> </span>as<span class="w"> </span>one<span class="w"> </span>skill<span class="w"> </span>finishes,<span class="w"> </span>this<span class="w"> </span>skill<span class="w"> </span>drops<span class="w"> </span>out<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>control<span class="w"> </span>hierarchy.<span class="w"> </span>**This<span class="w"> </span>means<span class="w"> </span>that<span class="w"> </span>the<span class="w"> </span>control<span class="w"> </span>hierarchy<span class="w"> </span>gets<span class="w"> </span>updated,<span class="w"> </span>resulting<span class="w"> </span>in<span class="w"> </span>a<span class="w"> </span>potentially<span class="w"> </span>fundamentally<span class="w"> </span>different<span class="w"> </span>robot<span class="w"> </span>behavior<span class="w"> </span>(due<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>projection).**
-<span class="linenos">235</span><span class="w">                </span><span class="nt">&lt;/member&gt;</span>
-<span class="linenos">236</span><span class="w">                </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;categories&quot;</span><span class="nt">&gt;</span>composition<span class="nt">&lt;/member&gt;</span>
-<span class="linenos">237</span><span class="w">                </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;implementation&quot;</span><span class="nt">&gt;</span>
-<span class="linenos">238</span><span class="w">                    </span><span class="nt">&lt;clone</span><span class="w"> </span><span class="na">prototype=</span><span class="s">&quot;cpp&quot;</span><span class="nt">&gt;</span>
-<span class="linenos">239</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;lib&quot;</span><span class="nt">&gt;</span>cppitasc_skills<span class="nt">&lt;/member&gt;</span>
-<span class="linenos">240</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;class&quot;</span><span class="nt">&gt;</span>SkillParallel<span class="nt">&lt;/member&gt;</span>
-<span class="linenos">241</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;arguments&quot;</span><span class="nt">&gt;</span>skill_name,<span class="w"> </span>loops,<span class="w"> </span>tasks,<span class="w"> </span>bounds,
-<span class="linenos">242</span><span class="w">                            </span>monitors,<span class="w"> </span>transitions,<span class="w"> </span>scripts,
-<span class="linenos">243</span><span class="w">                            </span>skills,<span class="w"> </span>robot
-<span class="linenos">244</span><span class="w">                        </span><span class="nt">&lt;/member&gt;</span>
-<span class="linenos">245</span><span class="w">                    </span><span class="nt">&lt;/clone&gt;</span>
-<span class="linenos">246</span><span class="w">                </span><span class="nt">&lt;/member&gt;</span>
-<span class="linenos">247</span><span class="w">            </span><span class="nt">&lt;/meta&gt;</span>
-<span class="linenos">248</span><span class="w">            </span><span class="nt">&lt;data&gt;</span>
-<span class="linenos">249</span><span class="w">                </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;skills&quot;</span><span class="w"> </span><span class="na">data_type=</span><span class="s">&quot;list:skill&quot;</span><span class="w"> </span><span class="na">prototype=</span><span class="s">&quot;base&quot;</span><span class="nt">&gt;</span>
-<span class="linenos">250</span><span class="w">                    </span><span class="nt">&lt;meta&gt;</span>
-<span class="linenos">251</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Sub-skills<span class="w"> </span>that<span class="w"> </span>are<span class="w"> </span>executed<span class="w"> </span>simultaneously.<span class="nt">&lt;/member&gt;</span>
-<span class="linenos">252</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;visibility&quot;</span><span class="nt">&gt;</span>required<span class="nt">&lt;/member&gt;</span>
-<span class="linenos">253</span><span class="w">                    </span><span class="nt">&lt;/meta&gt;</span>
-<span class="linenos">254</span><span class="w">                </span><span class="nt">&lt;/type&gt;</span>
-<span class="linenos">255</span><span class="w">            </span><span class="nt">&lt;/data&gt;</span>
-<span class="linenos">256</span><span class="w">        </span><span class="nt">&lt;/type&gt;</span>
-<span class="linenos">257</span>
-<span class="linenos">258</span><span class="w">    </span><span class="nt">&lt;/models&gt;</span>
-<span class="linenos">259</span>
-<span class="linenos">260</span><span class="nt">&lt;/pitasc&gt;</span>
+<span class="linenos">234</span><span class="w">            </span><span class="nt">&lt;/data&gt;</span>
+<span class="linenos">235</span><span class="w">        </span><span class="nt">&lt;/type&gt;</span>
+<span class="linenos">236</span>
+<span class="linenos">237</span>
+<span class="hll"><span class="linenos">238</span><span class="w">        </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;skill_concurrency&quot;</span><span class="w"> </span><span class="na">prototype=</span><span class="s">&quot;skill_single_robot&quot;</span><span class="nt">&gt;</span>
+</span><span class="linenos">239</span><span class="w">            </span><span class="nt">&lt;meta&gt;</span>
+<span class="linenos">240</span><span class="w">                </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Hierarchy<span class="w"> </span>of<span class="w"> </span>skills<span class="w"> </span>which<span class="w"> </span>are<span class="w"> </span>executed<span class="w"> </span>simultaneously.<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">241</span><span class="w">                </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;categories&quot;</span><span class="nt">&gt;</span>composition<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">242</span><span class="w">                </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;implementation&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">243</span><span class="w">                    </span><span class="nt">&lt;clone</span><span class="w"> </span><span class="na">prototype=</span><span class="s">&quot;cpp&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">244</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;lib&quot;</span><span class="nt">&gt;</span>cppitasc_skills<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">245</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;class&quot;</span><span class="nt">&gt;</span>SkillHierarchy<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">246</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;arguments&quot;</span><span class="nt">&gt;</span>skill_name,<span class="w"> </span>loops,<span class="w"> </span>tasks,<span class="w"> </span>bounds,
+<span class="linenos">247</span><span class="w">                            </span>monitors,<span class="w"> </span>transitions,<span class="w"> </span>scripts,
+<span class="linenos">248</span><span class="w">                            </span>skills,<span class="w"> </span>robot
+<span class="linenos">249</span><span class="w">                        </span><span class="nt">&lt;/member&gt;</span>
+<span class="linenos">250</span><span class="w">                    </span><span class="nt">&lt;/clone&gt;</span>
+<span class="linenos">251</span><span class="w">                </span><span class="nt">&lt;/member&gt;</span>
+<span class="linenos">252</span><span class="w">            </span><span class="nt">&lt;/meta&gt;</span>
+<span class="linenos">253</span><span class="w">            </span><span class="nt">&lt;data&gt;</span>
+<span class="linenos">254</span><span class="w">                </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;skills&quot;</span><span class="w"> </span><span class="na">data_type=</span><span class="s">&quot;list:skill&quot;</span><span class="w"> </span><span class="na">prototype=</span><span class="s">&quot;base&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">255</span><span class="w">                    </span><span class="nt">&lt;meta&gt;</span>
+<span class="linenos">256</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Sub-skills<span class="w"> </span>that<span class="w"> </span>are<span class="w"> </span>executed<span class="w"> </span>simultaneously.<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">257</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;visibility&quot;</span><span class="nt">&gt;</span>required<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">258</span><span class="w">                    </span><span class="nt">&lt;/meta&gt;</span>
+<span class="linenos">259</span><span class="w">                </span><span class="nt">&lt;/type&gt;</span>
+<span class="linenos">260</span><span class="w">            </span><span class="nt">&lt;/data&gt;</span>
+<span class="linenos">261</span><span class="w">        </span><span class="nt">&lt;/type&gt;</span>
+<span class="linenos">262</span>
+<span class="hll"><span class="linenos">263</span><span class="w">        </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;skill_parallel&quot;</span><span class="w"> </span><span class="na">prototype=</span><span class="s">&quot;skill_single_robot&quot;</span><span class="nt">&gt;</span>
+</span><span class="linenos">264</span><span class="w">            </span><span class="nt">&lt;meta&gt;</span>
+<span class="linenos">265</span><span class="w">                </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Hierarchy<span class="w"> </span>of<span class="w"> </span>skills<span class="w"> </span>which<span class="w"> </span>are<span class="w"> </span>executed<span class="w"> </span>simultaneously.<span class="w"> </span>Ends<span class="w"> </span>with<span class="w"> </span>&#39;succeeded&#39;<span class="w"> </span>only<span class="w"> </span>if<span class="w"> </span>**all**<span class="w"> </span>subskills<span class="w"> </span>triggered<span class="w"> </span>&#39;succeeded&#39;.
+<span class="linenos">266</span>
+<span class="linenos">267</span><span class="w">                </span>If<span class="w"> </span>a<span class="w"> </span>subskill<span class="w"> </span>cannot<span class="w"> </span>finish<span class="w"> </span>with<span class="w"> </span>&#39;succeeded&#39;,<span class="w"> </span>it<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>block<span class="w"> </span>the<span class="w"> </span>skill_parallel,<span class="w"> </span>except<span class="w"> </span>when<span class="w"> </span>there<span class="w"> </span>is<span class="w"> </span>no<span class="w"> </span>subskill<span class="w"> </span>that<span class="w"> </span>can<span class="w"> </span>trigger<span class="w"> </span>&#39;succeeded&#39;.
+<span class="linenos">268</span>
+<span class="linenos">269</span><span class="w">                </span>As<span class="w"> </span>soon<span class="w"> </span>as<span class="w"> </span>one<span class="w"> </span>skill<span class="w"> </span>finishes,<span class="w"> </span>this<span class="w"> </span>skill<span class="w"> </span>drops<span class="w"> </span>out<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>control<span class="w"> </span>hierarchy.<span class="w"> </span>**This<span class="w"> </span>means<span class="w"> </span>that<span class="w"> </span>the<span class="w"> </span>control<span class="w"> </span>hierarchy<span class="w"> </span>gets<span class="w"> </span>updated,<span class="w"> </span>resulting<span class="w"> </span>in<span class="w"> </span>a<span class="w"> </span>potentially<span class="w"> </span>fundamentally<span class="w"> </span>different<span class="w"> </span>robot<span class="w"> </span>behavior<span class="w"> </span>(due<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>projection).**
+<span class="linenos">270</span><span class="w">                </span><span class="nt">&lt;/member&gt;</span>
+<span class="linenos">271</span><span class="w">                </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;categories&quot;</span><span class="nt">&gt;</span>composition<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">272</span><span class="w">                </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;implementation&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">273</span><span class="w">                    </span><span class="nt">&lt;clone</span><span class="w"> </span><span class="na">prototype=</span><span class="s">&quot;cpp&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">274</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;lib&quot;</span><span class="nt">&gt;</span>cppitasc_skills<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">275</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;class&quot;</span><span class="nt">&gt;</span>SkillParallel<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">276</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;arguments&quot;</span><span class="nt">&gt;</span>skill_name,<span class="w"> </span>loops,<span class="w"> </span>tasks,<span class="w"> </span>bounds,
+<span class="linenos">277</span><span class="w">                            </span>monitors,<span class="w"> </span>transitions,<span class="w"> </span>scripts,
+<span class="linenos">278</span><span class="w">                            </span>skills,<span class="w"> </span>robot
+<span class="linenos">279</span><span class="w">                        </span><span class="nt">&lt;/member&gt;</span>
+<span class="linenos">280</span><span class="w">                    </span><span class="nt">&lt;/clone&gt;</span>
+<span class="linenos">281</span><span class="w">                </span><span class="nt">&lt;/member&gt;</span>
+<span class="linenos">282</span><span class="w">            </span><span class="nt">&lt;/meta&gt;</span>
+<span class="linenos">283</span><span class="w">            </span><span class="nt">&lt;data&gt;</span>
+<span class="linenos">284</span><span class="w">                </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;skills&quot;</span><span class="w"> </span><span class="na">data_type=</span><span class="s">&quot;list:skill&quot;</span><span class="w"> </span><span class="na">prototype=</span><span class="s">&quot;base&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">285</span><span class="w">                    </span><span class="nt">&lt;meta&gt;</span>
+<span class="linenos">286</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Sub-skills<span class="w"> </span>that<span class="w"> </span>are<span class="w"> </span>executed<span class="w"> </span>simultaneously.<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">287</span><span class="w">                        </span><span class="nt">&lt;member</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;visibility&quot;</span><span class="nt">&gt;</span>required<span class="nt">&lt;/member&gt;</span>
+<span class="linenos">288</span><span class="w">                    </span><span class="nt">&lt;/meta&gt;</span>
+<span class="linenos">289</span><span class="w">                </span><span class="nt">&lt;/type&gt;</span>
+<span class="linenos">290</span><span class="w">            </span><span class="nt">&lt;/data&gt;</span>
+<span class="linenos">291</span><span class="w">        </span><span class="nt">&lt;/type&gt;</span>
+<span class="linenos">292</span>
+<span class="linenos">293</span><span class="w">    </span><span class="nt">&lt;/models&gt;</span>
+<span class="linenos">294</span>
+<span class="linenos">295</span><span class="nt">&lt;/pitasc&gt;</span>
 </pre></div>
 </div>
 </section>
@@ -381,8 +417,8 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2025, Pitasc Team.
-      <span class="lastupdated">Last updated on Aug 29, 2025, 9:11:24 AM.
+    <p>&#169; Copyright 2026, Pitasc Team.
+      <span class="lastupdated">Last updated on May 12, 2026, 11:17:55 AM.
       </span></p>
   </div>
 

@@ -1,0 +1,23 @@
+====================
+frames_from_yaml.xml
+====================
+
+This example application shows how to load frames from a yaml file to use with pitasc
+
+Models used
+-----------
+
+* :doc:`../../scripts/script_set_frames_from_yaml`: lines 49
+* :doc:`../../skills/skill_idle_duration`: lines 46
+* :doc:`../../skills/skill_lin`: lines 56, 61, 66, 71, 76
+* :doc:`../../skills/skill_relative_ptp`: lines 42
+* :doc:`../../skills/skill_sequence`: lines 34
+
+File contents
+-------------
+
+
+.. literalinclude:: frames_from_yaml.xml
+    :language: xml
+    :linenos:
+    :emphasize-lines: 66,34,71,42,76,46,49,56,61

@@ -2,9 +2,10 @@
 script_sinus_frame
 ==================
 
-Creates a temporary frame that lives as long as the parent skill is active. The frame moves in the given coordinate with a sinus
+Creates a temporary frame that lives as long as the parent
+skill is active. The frame moves in the given coordinate with a sinus
 
-Defined at line 208 of file :doc:`scripts/geometry.xml <../model_files/pitasc_library/scripts/geometry_xml>` in package **pitasc_library**.
+Defined at line 245 of file :doc:`scripts/geometry.xml <../model_files/pitasc_library/scripts/geometry_xml>` in package **pitasc_library**.
 
 Meta data
 =========

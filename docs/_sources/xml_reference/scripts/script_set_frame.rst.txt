@@ -4,7 +4,7 @@ script_set_frame
 
 Sets a new frame.
 
-Defined at line 119 of file :doc:`scripts/geometry.xml <../model_files/pitasc_library/scripts/geometry_xml>` in package **pitasc_library**.
+Defined at line 120 of file :doc:`scripts/geometry.xml <../model_files/pitasc_library/scripts/geometry_xml>` in package **pitasc_library**.
 
 Meta data
 =========

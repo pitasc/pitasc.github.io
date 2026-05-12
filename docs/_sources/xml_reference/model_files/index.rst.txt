@@ -113,6 +113,7 @@ pitasc_library/skills
 * :doc:`skill_force.xml <pitasc_library/skills/skill_force_xml>`
 * :doc:`skill_guarded_approach.xml <pitasc_library/skills/skill_guarded_approach_xml>`
 * :doc:`skill_guarded_lin.xml <pitasc_library/skills/skill_guarded_lin_xml>`
+* :doc:`skill_guarded_sequence.xml <pitasc_library/skills/skill_guarded_sequence_xml>`
 * :doc:`skill_guarded_slide.xml <pitasc_library/skills/skill_guarded_slide_xml>`
 * :doc:`skill_hold_pose.xml <pitasc_library/skills/skill_hold_pose_xml>`
 * :doc:`skill_idle_duration.xml <pitasc_library/skills/skill_idle_duration_xml>`
@@ -133,6 +134,7 @@ pitasc_library/skills
 * :doc:`skill_push.xml <pitasc_library/skills/skill_push_xml>`
 * :doc:`skill_relative_lin.xml <pitasc_library/skills/skill_relative_lin_xml>`
 * :doc:`skill_relative_ptp.xml <pitasc_library/skills/skill_relative_ptp_xml>`
+* :doc:`skill_ruckig.xml <pitasc_library/skills/skill_ruckig_xml>`
 * :doc:`skill_slide_relative.xml <pitasc_library/skills/skill_slide_relative_xml>`
 * :doc:`skill_slide.xml <pitasc_library/skills/skill_slide_xml>`
 * :doc:`skill_user_confirm.xml <pitasc_library/skills/skill_user_confirm_xml>`
@@ -153,6 +155,7 @@ pitasc_library/skills
     skill_force.xml <pitasc_library/skills/skill_force_xml>
     skill_guarded_approach.xml <pitasc_library/skills/skill_guarded_approach_xml>
     skill_guarded_lin.xml <pitasc_library/skills/skill_guarded_lin_xml>
+    skill_guarded_sequence.xml <pitasc_library/skills/skill_guarded_sequence_xml>
     skill_guarded_slide.xml <pitasc_library/skills/skill_guarded_slide_xml>
     skill_hold_pose.xml <pitasc_library/skills/skill_hold_pose_xml>
     skill_idle_duration.xml <pitasc_library/skills/skill_idle_duration_xml>
@@ -173,6 +176,7 @@ pitasc_library/skills
     skill_push.xml <pitasc_library/skills/skill_push_xml>
     skill_relative_lin.xml <pitasc_library/skills/skill_relative_lin_xml>
     skill_relative_ptp.xml <pitasc_library/skills/skill_relative_ptp_xml>
+    skill_ruckig.xml <pitasc_library/skills/skill_ruckig_xml>
     skill_slide_relative.xml <pitasc_library/skills/skill_slide_relative_xml>
     skill_slide.xml <pitasc_library/skills/skill_slide_xml>
     skill_user_confirm.xml <pitasc_library/skills/skill_user_confirm_xml>

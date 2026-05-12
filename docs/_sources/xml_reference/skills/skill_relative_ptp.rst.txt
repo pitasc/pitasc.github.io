@@ -86,7 +86,9 @@ Examples
 
 **skill_relative_ptp** is used in the following examples:
 
+* :doc:`../examples/advanced/frames_from_yaml_xml`
 * :doc:`../examples/beginner/forces_feedforward_xml`
+* :doc:`../examples/beginner/forces_with_description_xml`
 * :doc:`../examples/beginner/forces_xml`
 * :doc:`../examples/beginner/simple_count_xml`
 * :doc:`../examples/beginner/simple_idle_xml`
@@ -96,6 +98,9 @@ Examples
 * :doc:`../examples/monitors/io_xml`
 * :doc:`../examples/monitors/sync_xml`
 * :doc:`../examples/rosless/forces_rosless_xml`
+* :doc:`../examples/rosless/frames_from_yaml_rosless_xml`
 * :doc:`../examples/scripts/io_xml`
 * :doc:`../examples/skills/forces_pid_xml`
+* :doc:`../examples/skills/guarded_sequence_xml`
 * :doc:`../examples/skills/position_pid_xml`
+* :doc:`../examples/skills/ruckig_guarded_lin_xml`

@@ -4,7 +4,7 @@ script_set_frame_rotvec
 
 Sets a new frame (pose with rotation vector).
 
-Defined at line 163 of file :doc:`scripts/geometry.xml <../model_files/pitasc_library/scripts/geometry_xml>` in package **pitasc_library**.
+Defined at line 194 of file :doc:`scripts/geometry.xml <../model_files/pitasc_library/scripts/geometry_xml>` in package **pitasc_library**.
 
 Meta data
 =========

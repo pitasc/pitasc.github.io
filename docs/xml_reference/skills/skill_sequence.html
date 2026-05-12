@@ -6,15 +6,15 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>skill_sequence &mdash; pitasc master documentation</title>
+  <title>skill_sequence &mdash; pitasc  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=48f0e2ba"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
       <script src="../../_static/doctools.js?v=888ff710"></script>
       <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -58,7 +58,10 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Skills</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#composition">composition</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="skill_app.html">skill_app</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_concurrency.html">skill_concurrency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="skill_guarded_sequence.html">skill_guarded_sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="skill_guarded_sequence_with_start.html">skill_guarded_sequence_with_start</a></li>
 <li class="toctree-l3"><a class="reference internal" href="skill_parallel.html">skill_parallel</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">skill_sequence</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#meta-data">Meta data</a></li>
@@ -218,6 +221,7 @@
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <p><strong>skill_sequence</strong> is used in the following examples:</p>
 <ul class="simple">
+<li><p><a class="reference internal" href="../examples/advanced/frames_from_yaml_xml.html"><span class="doc">frames_from_yaml.xml</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/advanced/strings_xml.html"><span class="doc">strings.xml</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/beginner/forces_feedforward_xml.html"><span class="doc">forces_feedforward.xml</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/beginner/forces_xml.html"><span class="doc">forces.xml</span></a></p></li>
@@ -247,6 +251,7 @@
 <li><p><a class="reference internal" href="../examples/monitors/sync_xml.html"><span class="doc">sync.xml</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/monitors/user_confirm_xml.html"><span class="doc">user_confirm.xml</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/rosless/forces_rosless_xml.html"><span class="doc">forces_rosless.xml</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/rosless/frames_from_yaml_rosless_xml.html"><span class="doc">frames_from_yaml_rosless.xml</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/rosless/simple_move_rosless_xml.html"><span class="doc">simple_move_rosless.xml</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/scripts/frame_editor_xml.html"><span class="doc">frame_editor.xml</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/scripts/io_xml.html"><span class="doc">io.xml</span></a></p></li>
@@ -257,11 +262,14 @@
 <li><p><a class="reference internal" href="../examples/skills/conical_helix_xml.html"><span class="doc">conical_helix.xml</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/skills/cylindrical_helix_xml.html"><span class="doc">cylindrical_helix.xml</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/skills/forces_pid_xml.html"><span class="doc">forces_pid.xml</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/skills/guarded_sequence_xml.html"><span class="doc">guarded_sequence.xml</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/skills/lin_time_optimal_ruckig_xml.html"><span class="doc">lin_time_optimal_ruckig.xml</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/skills/lin_time_optimal_xml.html"><span class="doc">lin_time_optimal.xml</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/skills/lin_trajectory_xml.html"><span class="doc">lin_trajectory.xml</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/skills/partial_lin_xml.html"><span class="doc">partial_lin.xml</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/skills/position_pid_xml.html"><span class="doc">position_pid.xml</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/skills/ptp_trajectory_xml.html"><span class="doc">ptp_trajectory.xml</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/skills/ruckig_guarded_lin_xml.html"><span class="doc">ruckig_guarded_lin.xml</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/skills/spherical_velocity_xml.html"><span class="doc">spherical_velocity.xml</span></a></p></li>
 </ul>
 </section>
@@ -278,8 +286,8 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2025, Pitasc Team.
-      <span class="lastupdated">Last updated on Aug 29, 2025, 9:11:24 AM.
+    <p>&#169; Copyright 2026, Pitasc Team.
+      <span class="lastupdated">Last updated on May 12, 2026, 11:17:55 AM.
       </span></p>
   </div>
 

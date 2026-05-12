@@ -9,12 +9,14 @@ Examples
 advanced
 --------
 
+* :doc:`advanced/frames_from_yaml_xml`
 * :doc:`advanced/strings_xml`
 
 .. toctree::
     :hidden:
     :maxdepth: 2
 
+    advanced/frames_from_yaml_xml
     advanced/strings_xml
 
 beginner
@@ -22,6 +24,7 @@ beginner
 
 * :doc:`beginner/forces_xml`
 * :doc:`beginner/forces_feedforward_xml`
+* :doc:`beginner/forces_with_description_xml`
 * :doc:`beginner/free_drive_xml`
 * :doc:`beginner/move_math_parser_xml`
 * :doc:`beginner/multiple_apps_xml`
@@ -44,6 +47,7 @@ beginner
 
     beginner/forces_xml
     beginner/forces_feedforward_xml
+    beginner/forces_with_description_xml
     beginner/free_drive_xml
     beginner/move_math_parser_xml
     beginner/multiple_apps_xml
@@ -115,6 +119,7 @@ rosless
 -------
 
 * :doc:`rosless/forces_rosless_xml`
+* :doc:`rosless/frames_from_yaml_rosless_xml`
 * :doc:`rosless/simple_move_rosless_xml`
 
 .. toctree::
@@ -122,6 +127,7 @@ rosless
     :maxdepth: 2
 
     rosless/forces_rosless_xml
+    rosless/frames_from_yaml_rosless_xml
     rosless/simple_move_rosless_xml
 
 scripts
@@ -149,11 +155,14 @@ skills
 * :doc:`skills/conical_helix_xml`
 * :doc:`skills/cylindrical_helix_xml`
 * :doc:`skills/forces_pid_xml`
+* :doc:`skills/guarded_sequence_xml`
 * :doc:`skills/lin_time_optimal_xml`
+* :doc:`skills/lin_time_optimal_ruckig_xml`
 * :doc:`skills/lin_trajectory_xml`
 * :doc:`skills/partial_lin_xml`
 * :doc:`skills/position_pid_xml`
 * :doc:`skills/ptp_trajectory_xml`
+* :doc:`skills/ruckig_guarded_lin_xml`
 * :doc:`skills/spherical_velocity_xml`
 
 .. toctree::
@@ -165,9 +174,12 @@ skills
     skills/conical_helix_xml
     skills/cylindrical_helix_xml
     skills/forces_pid_xml
+    skills/guarded_sequence_xml
     skills/lin_time_optimal_xml
+    skills/lin_time_optimal_ruckig_xml
     skills/lin_trajectory_xml
     skills/partial_lin_xml
     skills/position_pid_xml
     skills/ptp_trajectory_xml
+    skills/ruckig_guarded_lin_xml
     skills/spherical_velocity_xml

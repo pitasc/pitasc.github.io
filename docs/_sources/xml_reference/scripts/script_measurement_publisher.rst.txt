@@ -39,4 +39,5 @@ Examples
 
 * :doc:`../examples/monitors/multiple_events_in_same_skill_xml`
 * :doc:`../examples/scripts/logging_xml`
+* :doc:`../examples/skills/lin_time_optimal_ruckig_xml`
 * :doc:`../examples/skills/position_pid_xml`

@@ -93,6 +93,8 @@ Examples
 
 **skill_push_duration** is used in the following examples:
 
+* :doc:`../examples/beginner/forces_with_description_xml`
 * :doc:`../examples/beginner/forces_xml`
 * :doc:`../examples/beginner/free_drive_xml`
 * :doc:`../examples/rosless/forces_rosless_xml`
+* :doc:`../examples/rosless/frames_from_yaml_rosless_xml`

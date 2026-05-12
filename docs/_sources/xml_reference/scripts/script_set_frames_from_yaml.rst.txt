@@ -1,0 +1,50 @@
+===========================
+script_set_frames_from_yaml
+===========================
+
+Sets a new frame.
+
+Defined at line 165 of file :doc:`scripts/geometry.xml <../model_files/pitasc_library/scripts/geometry_xml>` in package **pitasc_library**.
+
+Meta data
+=========
+
+  | **Categories**
+  |   frames
+
+  | **Prototypes**
+  |   script_kinematic_graph, script, object, dictionary, base, descriptive
+
+Parameters
+==========
+
+**Required** parameters:
+
+  | **path_to_yaml** : string
+  |  Path to yaml file which holds frame information
+
+  | **package** : string
+  |  package name to yaml file
+
+**Basic** parameters:
+
+  | **on_start** : bool
+  |  Execute the script before or after the skill.
+  |  **Default**: True
+
+  | **tf_broadcast** : bool
+  |  Broadcast the frame to TF?
+  |  **Default**: False
+
+**Hidden** parameters:
+
+  | **kinematic_graph** : dict
+  |  Graph of kinematic links
+
+Examples
+========
+
+**script_set_frames_from_yaml** is used in the following examples:
+
+* :doc:`../examples/advanced/frames_from_yaml_xml`
+* :doc:`../examples/rosless/frames_from_yaml_rosless_xml`
