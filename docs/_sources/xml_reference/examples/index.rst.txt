@@ -9,14 +9,12 @@ Examples
 advanced
 --------
 
-* :doc:`advanced/frames_from_yaml_xml`
 * :doc:`advanced/strings_xml`
 
 .. toctree::
     :hidden:
     :maxdepth: 2
 
-    advanced/frames_from_yaml_xml
     advanced/strings_xml
 
 beginner
@@ -119,7 +117,6 @@ rosless
 -------
 
 * :doc:`rosless/forces_rosless_xml`
-* :doc:`rosless/frames_from_yaml_rosless_xml`
 * :doc:`rosless/simple_move_rosless_xml`
 
 .. toctree::
@@ -127,7 +124,6 @@ rosless
     :maxdepth: 2
 
     rosless/forces_rosless_xml
-    rosless/frames_from_yaml_rosless_xml
     rosless/simple_move_rosless_xml
 
 scripts

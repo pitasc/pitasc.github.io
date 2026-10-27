@@ -1,0 +1,163 @@
+/* ============================================================
+   pitasc docs – custom RTD theme tweaks
+   ============================================================ */
+
+/* ---- 1. Wider content area ---- */
+.wy-nav-content {
+    max-width: 1200px;   /* RTD default: 800px */
+}
+
+/* Center the content block on very wide monitors */
+.wy-nav-content-wrap {
+    background: #fcfcfc;
+}
+
+/* ---- 2. Slightly bigger headings ---- */
+.rst-content h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 1.2em;
+}
+
+.rst-content h2 {
+    font-size: 1.85rem;
+    font-weight: 600;
+    margin-top: 1.8em;
+    padding-bottom: 0.25em;
+    border-bottom: 1px solid #e1e4e5;
+}
+
+.rst-content h3 { font-size: 1.45rem; font-weight: 600; }
+.rst-content h4 { font-size: 1.2rem;  font-weight: 600; }
+
+/* ---- 3. Rubrics (used as tutorial entry titles) ---- */
+.rst-content p.rubric {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2980b9;
+    margin-top: 2em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #e1e4e5;
+}
+
+/* ---- 4. Readability ---- */
+.rst-content p,
+.rst-content li {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* ---- 5. Figures & captions ---- */
+.rst-content div.figure,
+.rst-content figure {
+    margin: 1.5em auto;
+}
+
+.rst-content div.figure p.caption,
+.rst-content figure figcaption {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #555;
+}
+
+/* ---- 6. sphinx-design cards inside the RTD theme ---- */
+.sd-card {
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.sd-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    transform: translateY(-2px);
+}
+
+.sd-card .sd-card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+/* 3D model download table */
+.model-table img {
+    max-width: 220px;
+    border-radius: 4px;
+    background: #f7f7f7;
+    padding: 4px;
+}
+
+.model-table td {
+    vertical-align: middle !important;
+}
+
+/* Badge row under the page title */
+.tutorial-meta {
+    margin: -0.5em 0 1.5em 0;
+}
+
+/* Dropdown titles in monospace read better for file names */
+.sd-summary-title code {
+    font-size: 0.95em;
+}
+
+.sd-card-img-top {
+    object-fit: contain;
+    width: 100%;
+    max-height: 300px;
+    background: #f7f7f7;    /* fills the letterbox area */
+    padding: 0.5rem;
+}
+
+/* ---- 7. Tables: use full available width ---- */
+.rst-content table.docutils {
+    width: 100%;
+    display: table;
+}
+
+.rst-content div.figure img,
+.rst-content figure img {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ---- 8. Videos inside sphinx-design grids ---- */
+.sd-col .video_wrapper,
+.sd-col video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.sd-col .video_wrapper figcaption,
+.sd-col figure figcaption {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #555;
+    margin-top: 0.4em;
+}
+
+/* ---- 9. Landing page ---- */
+.rst-content .sd-card-footer {
+    font-size: 0.85rem;
+    color: #2980b9;
+    background: transparent;
+    border-top: 1px solid #e1e4e5;
+}
+
+/* Make linked cards feel clickable */
+.rst-content .sd-card.sd-card-hover:hover {
+    border-color: #2980b9;
+}
+
+/* Equal-height cards in a grid row */
+.rst-content .sd-row > .sd-col > .sd-card {
+    height: 100%;
+}
+
+/* Octicons in card titles */
+.rst-content .sd-card-title .sd-octicon {
+    vertical-align: -0.15em;
+    margin-right: 0.35em;
+    color: #2980b9;
+}

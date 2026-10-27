@@ -1,0 +1,73 @@
+=====
+Usage
+=====
+
+.. warning::
+
+   Always re-teach **all** TF frames to match your physical hardware setup
+   before running a parkour. Running with mismatched frames can damage the
+   robot, the gripper or the workpiece.
+
+
+How to start the program
+========================
+
+The tutorial needs **three terminals**. Run the steps in the given order and
+keep every terminal open.
+
+.. grid:: 1 1 3 3
+   :gutter: 3
+
+   .. grid-item-card:: :octicon:`play` 1 · Launch the parkour
+
+      .. code-block:: bash
+
+         roslaunch pitasc_realworld_tutorial \
+             <launch_file_name>
+
+   .. grid-item-card:: :octicon:`cpu` 2 · Start the executor
+
+      .. code-block:: bash
+
+         pitasc_executor_rossrv -t
+
+   .. grid-item-card:: :octicon:`browser` 3 · Start piteacher
+
+      .. code-block:: bash
+
+         rqt -s pi_teacher
+
+.. rubric:: 4 · Load the application
+
+In rqt, load the desired application XML. You can either use the provided
+sample solution or create your own pitasc application in the ``application``
+directory.
+
+.. seealso::
+
+   :doc:`How to create an application <../how-to/beginner/How_to_create_an_application>`
+
+
+Teaching frames
+===============
+
+Each tutorial ships with several `TF frames <https://wiki.ros.org/tf>`__ that
+define the positions and orientations of the robot's end-effector.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Your situation
+     - What to do
+   * - Using the **sample solution**
+     - Re-teach **all** frames according to your hardware setup.
+   * - Creating **your own application**
+     - Either reuse the provided frames (re-teach them first) or teach new ones.
+
+.. dropdown:: How do I teach a frame?
+   :icon: question
+
+   Frames are taught with the **frame editor** rqt plugin. Installation and
+   usage instructions are available in the package index:
+   `frame_editor <https://index.ros.org/r/frame_editor/#noetic>`__

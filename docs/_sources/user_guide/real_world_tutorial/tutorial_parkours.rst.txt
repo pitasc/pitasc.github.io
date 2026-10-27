@@ -1,0 +1,170 @@
+.. _tutorial_parkour:
+
+================
+Tutorial Parkour
+================
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   tutorial_parkour_0
+   tutorial_parkour_1
+   tutorial_parkour_2
+
+.. admonition:: About this parkour
+   :class: tip
+
+   Four hands-on tutorials of increasing complexity. Each one introduces new
+   force-controlled skills in **pitasc** - from a simple slotted maze up to
+   spherical motions on a curved surface.
+
+
+Choose a tutorial
+=================
+
+.. grid:: 1 2 2 2
+   :gutter: 3
+
+   .. grid-item-card:: 0 · Simple maze with a cylindrical peg
+      :link: tutorial_parkour_0
+      :link-type: doc
+      :img-top: /_images/real_world_tutorial/parkour_0/p0_example_configuration.jpeg
+      :class-card: sd-shadow-sm
+
+      Move a cylindrical peg through a slotted maze, guided purely by
+      force feedback.
+
+      +++
+      :bdg-primary:`force feedback` :bdg-secondary:`cartesian coordinates`
+
+   .. grid-item-card:: 1 · T-piece insertion into a guided fixture
+      :link: tutorial_parkour_1
+      :link-type: doc
+      :img-top: /_images/real_world_tutorial/parkour_1/p1_example_configuration.png
+      :class-card: sd-shadow-sm
+
+      Insert a T-piece into a fixture with chamfered and non-chamfered
+      guides.
+
+      +++
+      :bdg-primary:`guided insertion` :bdg-secondary:`cartesian coordinates`
+
+   .. grid-item-card:: 2 · Multi-section maze with door opening
+      :link: tutorial_parkour_2
+      :link-type: doc
+      :img-top: /_images/real_world_tutorial/parkour_2/p2_example_configuration.png
+      :class-card: sd-shadow-sm
+
+      Use the door-opening skill, then guide a cylindrical peg through a
+      slotted maze using force feedback.
+
+      +++
+      :bdg-primary:`door opening` :bdg-secondary:`cartesian coordinates`
+
+   .. grid-item-card:: 3 · Turtle shell dome maze
+      :class-card: sd-shadow-sm sd-text-muted
+      :img-top: /_images/real_world_tutorial/parkour_3/p3_example_configuration.png
+
+      Move a stylus with spherical and cylindrical motions across a
+      dome-shaped ("turtle shell") maze.
+
+      +++
+      :bdg-warning:`coming soon` :bdg-secondary:`spherical coordinates` :bdg-secondary:`cylindrical coordinates`
+
+
+At a glance
+===========
+
+.. list-table::
+   :header-rows: 1
+   :widths: 8 28 64
+   :class: longtable
+
+   * - #
+     - Tutorial
+     - Focus
+   * - 0
+     - :doc:`tutorial_parkour_0`
+     - Simple maze, cylindrical peg, force-feedback guidance
+   * - 1
+     - :doc:`tutorial_parkour_1`
+     - T-piece insertion into a guided fixture (chamfered / non-chamfered)
+   * - 2
+     - :doc:`tutorial_parkour_2`
+     - Multi-section maze with door opening and complex maze
+   * - 3
+     - Turtle shell dome maze *(coming soon)*
+     - Stylus with spherical and cylindrical motions on a dome-like surface
+
+
+Tutorial details
+================
+
+0 - Simple maze with a cylindrical peg
+-------------------------------------
+
+:doc:`tutorial_parkour_0`
+
+This tutorial focuses on a very simple maze, solved by moving a cylindrical peg
+from start to finish. The peg is held by a gripper on a manipulator arm, and its
+motion is governed by the force feedback that the force-torque sensor receives
+from the interaction of the peg with the maze walls.
+
+.. figure:: /_images/real_world_tutorial/parkour_0/p0_example_configuration.jpeg
+   :alt: Cylindrical peg and simple maze with guiding slot
+   :align: center
+
+   Parts used in tutorial 0: a cylindrical peg and a simple maze with a
+   guiding slot.
+
+
+1 - T-piece insertion into a guided fixture
+-------------------------------------------
+
+:doc:`tutorial_parkour_1`
+
+This tutorial focuses on inserting a T-piece into a fixture with guides. The
+fixture has two guides, one on each side. One side has chamfered edges and the
+other does not, which increases the complexity of the operation.
+
+.. figure:: /_images/real_world_tutorial/parkour_1/p1_example_configuration.png
+   :alt: T-piece and fixture with guides on the top and bottom side
+   :align: center
+
+   Parts used in tutorial 1: a T-piece and a fixture with guides on the top
+   and bottom side.
+
+
+2 - Multi-section maze with door opening
+----------------------------------------
+
+:doc:`tutorial_parkour_2`
+
+This tutorial focuses on opening a door by estimating the hinge position and
+axis of rotation from force feedback. After opening the door, a maze is solved
+using the force feedback observed during interaction between a cylindrical peg
+and the maze.
+
+.. figure:: /_images/real_world_tutorial/parkour_2/p2_example_configuration.png
+   :alt: Cylindrical peg and a complex maze with door and guiding slot
+   :align: center
+
+   Parts used in tutorial 2: a cylindrical peg and a fixture with a door and a
+   maze with guides to direct the peg from start to finish.
+
+
+3 - Turtle shell dome maze
+--------------------------
+
+.. admonition:: Coming soon
+   :class: note
+
+   This tutorial will provide pitasc-based robot motion for moving a stylus
+   with spherical and cylindrical motions on a dome-like ("turtle shell")
+   maze, demonstrating the advanced capabilities of pitasc.
+
+
+.. figure:: /_images/real_world_tutorial/parkour_3/p3_example_configuration.png
+   :alt: Custom cylindrical peg and fixture turtle shell like dome maze
+   :align: center

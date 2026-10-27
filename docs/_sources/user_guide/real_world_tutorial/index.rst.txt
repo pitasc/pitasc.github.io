@@ -1,0 +1,89 @@
+.. pitasc_realworld_tutorial documentation master file, created by
+   sphinx-quickstart on Thu Nov 20 10:42:05 2025.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+.. _realworld-tutorials:
+
+===================
+Realworld tutorials
+===================
+
+.. rst-class:: tutorial-meta
+
+:bdg-primary:`Hands-on` :bdg-secondary:`Force control`
+:bdg-secondary:`3D-printed setups` :bdg-info:`Real hardware`
+
+These tutorials take you from a bare robot to a working, force-controlled
+application. Every parkour is built from 3D-printed parts, so you can reproduce
+the whole setup on your own hardware.
+
+.. grid:: 1 2 2 2
+   :gutter: 3
+   :class-container: sd-mb-4
+
+   .. grid-item-card:: :octicon:`book;1.2em` Overview
+      :link: overview
+      :link-type: doc
+      :class-card: sd-shadow-sm
+
+      What the tutorials cover and which hardware you need.
+
+   .. grid-item-card:: :octicon:`download;1.2em` Installation
+      :link: installation
+      :link-type: doc
+      :class-card: sd-shadow-sm
+
+      Get the tutorial packages onto your system.
+
+   .. grid-item-card:: :octicon:`terminal;1.2em` Usage
+      :link: usage
+      :link-type: doc
+      :class-card: sd-shadow-sm
+
+      Launch files, RViz and the frame editor.
+
+   .. grid-item-card:: :octicon:`milestone;1.2em` Tutorial parkours
+      :link: tutorial_parkours
+      :link-type: doc
+      :class-card: sd-shadow-sm
+
+      The parkour tasks, ordered by difficulty.
+
+
+Before you start
+================
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Requirement
+     - Details
+   * - Robot
+     - Any pitasc-compatible robot with a force/torque sensor.
+   * - Gripper
+     - Weiss WSG 50-110, Robotiq 2F-85 / 2F-140 or Franka Hand.
+   * - 3D printer
+     - For the parkour parts. Tolerances tested on a Bambu Lab X1.
+   * - Workbench
+     - Welding table with 50 × 50 hole pattern (recommended).
+
+.. danger::
+   Always **tare the force/torque sensor** before running force-controlled
+   skills, and keep the emergency stop within reach.
+
+.. tip::
+   Add **user confirms** between skills while developing. They make it far
+   easier to spot problems and abort execution safely.
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   :hidden:
+
+   overview
+   installation
+   usage
+   tutorial_parkours

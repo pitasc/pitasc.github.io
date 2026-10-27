@@ -102,7 +102,6 @@ Examples
 
 **skill_lin** is used in the following examples:
 
-* :doc:`../examples/advanced/frames_from_yaml_xml`
 * :doc:`../examples/advanced/strings_xml`
 * :doc:`../examples/beginner/forces_feedforward_xml`
 * :doc:`../examples/beginner/forces_with_description_xml`
@@ -127,7 +126,6 @@ Examples
 * :doc:`../examples/monitors/switch_skill_with_rosservice_xml`
 * :doc:`../examples/monitors/user_confirm_xml`
 * :doc:`../examples/rosless/forces_rosless_xml`
-* :doc:`../examples/rosless/frames_from_yaml_rosless_xml`
 * :doc:`../examples/rosless/simple_move_rosless_xml`
 * :doc:`../examples/scripts/logging_xml`
 * :doc:`../examples/scripts/temp_frame_xml`

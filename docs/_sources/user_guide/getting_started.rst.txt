@@ -1,86 +1,223 @@
+.. _getting-started:
+
 ===============
 Getting started
 ===============
 
-The usual way to use pitasc is to start an executable, called the *file_reader*, that loads a pitasc
-application file and immediately executes it. pitasc applications are defined in a custom file format
-based on XML syntax, as defined in XXX. Let's start by running a simulated example.
+.. rst-class:: tutorial-meta
+
+:bdg-primary:`Level: beginner` :bdg-secondary:`Simulation`
+:bdg-secondary:`No hardware required` :bdg-info:`~10 min`
+
+.. admonition:: What you will learn
+   :class: tip
+
+   How to launch the pitasc **simulator**, run your first **application file**
+   with the ``file_reader``, and recognise the four most common force-based
+   skills in action.
+
+.. contents:: On this page
+   :local:
+   :depth: 2
+
+
+Overview
+========
+
+The usual way to use pitasc is to start an executable called the **file_reader**,
+which loads a pitasc application file and immediately executes it. pitasc
+applications are defined in a custom XML-based file format, as described in
+XXX.
+
+.. note::
+   The ``XXX`` cross-reference still needs to be replaced with a link to the
+   XML reference, e.g. :doc:`../xml_reference/skills/index`.
+
 
 Run an example
 ==============
 
-To run the examples included with pitasc, you need to open 2 terminals (if you did not enable the auto-activation of pitasc,
-you need to execute ``source ~/pitasc/<VERSION>/setup.bash``; if you configured the current version during installation,
-you can run ``source ~/pitasc/current/setup.bash``).
+To run the examples included with pitasc you need **two terminals**.
 
-**Terminal 1**
+.. admonition:: Sourcing the environment
+   :class: important
 
-You first need to start the simulator together with the visualization:
+   If you did not enable auto-activation of pitasc, source the environment in
+   **every** terminal:
 
-.. code-block:: console
+   .. code-block:: console
 
-    $ roslaunch pitasc_common bringup_examples.launch
+      $ source ~/pitasc/<VERSION>/setup.bash
 
-**Terminal 2**
+   If you configured the current version during installation, you can instead
+   run:
 
-Then you can run an example application using the *file_reader* (find out about its usage by running ``pitasc_filereader -h``.
-Here, we will start the ``forces.xml`` example provided with the *pitasc_common* ROS package:
+   .. code-block:: console
 
-.. code-block:: console
+      $ source ~/pitasc/current/setup.bash
 
-    $ pitasc_filereader pitasc_common examples/beginner/forces.xml
+.. grid:: 1 1 2 2
+   :gutter: 3
 
-The ``forces.xml`` example contains many of the most commonly used skills. Some of them are :ref:`presented below <ex-skills>`.
-The examples are shown using a simple kinematic simulator, called *micro_simulator*. The *micro_simulator* takes maximum acceleration
-and velocities into account and forces are calculated during contact with the floor based on spring equations.
+   .. grid-item-card:: :octicon:`device-desktop;1.2em` Terminal 1 — Simulator
+      :class-card: sd-shadow-sm
 
-There are a lot more example applications in the *pitasc_common* ROS package. You can browse through the examples to get a feeling
-for how to define applications and how to use and parameterize skills.
+      Start the simulator together with the visualization:
+
+      .. code-block:: console
+
+         $ roslaunch pitasc_common bringup_examples.launch
+
+   .. grid-item-card:: :octicon:`terminal;1.2em` Terminal 2 — Application
+      :class-card: sd-shadow-sm
+
+      Run an example application with the ``file_reader``:
+
+      .. code-block:: console
+
+         $ pitasc_filereader pitasc_common examples/beginner/forces.xml
+
+.. tip::
+   Find out about all ``file_reader`` options by running
+   ``pitasc_filereader -h``.
+
+The examples run in a simple kinematic simulator called **micro_simulator**. It
+takes maximum accelerations and velocities into account, and contact forces with
+the floor are calculated from spring equations.
+
+.. card:: Explore more examples
+
+   The *pitasc_common* ROS package contains many more example applications.
+   Browsing them is the fastest way to get a feeling for how applications are
+   defined and how skills are parameterized.
+
 
 .. _ex-skills:
 
 Example skills
 ==============
 
-The ``forces.xml`` example includes many different skills. At first, the robot moves near the ground floor (the pre-position phase).
-This is a typical step in real-world applications, too, as the subsequent force-based skills involve slower movements and thus take
-more time. For this reason, force skills are usually activated on the last millimeters or centimeters.
+The ``forces.xml`` example contains many of the most commonly used skills. They
+are executed in the order shown below.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 10 30 60
+
+   * - #
+     - Skill
+     - Purpose
+   * - 1
+     - ``skill_lin``
+     - Fast position-controlled move to a pre-position.
+   * - 2
+     - ``skill_guarded_approach``
+     - Establish contact without knowing the exact surface position.
+   * - 3
+     - ``skill_push`` / ``skill_push_settle``
+     - Regulate the contact force into a defined range.
+   * - 4
+     - ``skill_slide``
+     - Move along the surface while maintaining contact force.
+
+
+1. Moving to the pre-position
+-----------------------------
+
+First, the robot moves close to the ground floor. This is a typical step in
+real-world applications too: the subsequent force-based skills involve slower
+movements and therefore take more time, so force skills are usually activated
+only for the last millimeters or centimeters.
 
 .. figure:: /_images/example_lin2.gif
-    :align: center
-    :width: 90%
+   :align: center
+   :width: 90%
 
-    *skill_lin*: LIN movement towards pre-position.
+   ``skill_lin``: LIN movement towards the pre-position.
 
-Next, contact with the surface is established using a *guarded approach*-skill. This involves a movement with constant velocity towards
-the ground, until a certain contact force is measured. The rationale behind this is that the exact surface position is not known. Instead,
-the contact force carries the information when the target is reached. In real-world situations, fixtures are never fabricated perfectly,
-so actual target positions differ from the theoretical ones.
+
+2. Establishing contact
+-----------------------
+
+Next, contact with the surface is established using a **guarded approach**: a
+movement with constant velocity towards the ground until a certain contact
+force is measured.
+
+.. admonition:: Why force instead of position?
+   :class: important
+
+   The exact surface position is not known. Instead, the contact force carries
+   the information that the target has been reached. In real-world setups
+   fixtures are never fabricated perfectly, so actual target positions always
+   differ from the theoretical ones.
 
 .. figure:: /_images/example_guarded_approach2.gif
-    :align: center
-    :width: 90%
+   :align: center
+   :width: 90%
 
-    *skill_guarded_approach*: Movement with constant velocity until contact is established (determined by the measured contact forces).
+   ``skill_guarded_approach``: Movement with constant velocity until contact is
+   established, determined by the measured contact forces.
 
-Once contact is established, a force controller is often used to ensure that the contact force lies within a certain range. This is
-often beneficient or even necessary for subsequent process steps.
+
+3. Controlling the contact force
+--------------------------------
+
+Once contact is established, a force controller is often used to keep the
+contact force within a certain range. This is frequently beneficial — or even
+necessary — for subsequent process steps.
 
 .. figure:: /_images/example_push2.gif
-    :align: center
-    :width: 90%
+   :align: center
+   :width: 90%
 
-    *skill_push*/*skill_push_settle*: Force controller that ensures a certain contact force is established.
+   ``skill_push`` / ``skill_push_settle``: Force controller that ensures a
+   certain contact force is established.
 
-After these initial steps, the robot carries out the actual assembly operation. In the ``forces.xml`` example, this  is a sliding
-motion along the surface. This consists of a velocity-controlled motion along the surface. At the same time, a force controller
-acting perpendicular to the surface ensures that the contact to the surface is neither lost nor too firm.
 
-In many applications, the slide skill is aborted when another object is reached during the movement along the surface. In this example,
-the skill is simply aborted after a specific amount of time.
+4. Sliding along the surface
+----------------------------
+
+After these initial steps the robot carries out the actual assembly operation.
+In ``forces.xml`` this is a sliding motion along the surface: a
+velocity-controlled motion along the surface, while a force controller acting
+perpendicular to it ensures that contact is neither lost nor too firm.
+
+.. note::
+   In many applications the slide skill is aborted when another object is
+   reached during the movement. In this example it is simply aborted after a
+   fixed amount of time.
 
 .. figure:: /_images/example_slide.gif
-    :align: center
-    :width: 90%
+   :align: center
+   :width: 90%
 
-    *skill_slide*: Movement along the surface with constant velocity, while a force controller ensures firm contact to the surface.
+   ``skill_slide``: Movement along the surface with constant velocity, while a
+   force controller ensures firm contact.
+
+
+Next steps
+==========
+
+.. grid:: 1 2 2 3
+   :gutter: 3
+
+   .. grid-item-card:: :octicon:`book;1.2em` Fundamentals
+      :link: fundamentals/index
+      :link-type: doc
+      :class-card: sd-shadow-sm
+
+      Parameters, skills, monitors and transitions explained.
+
+   .. grid-item-card:: :octicon:`tools;1.2em` How-to guides
+      :link: how-to/index
+      :link-type: doc
+      :class-card: sd-shadow-sm
+
+      Short, task-oriented recipes.
+
+   .. grid-item-card:: :octicon:`mortar-board;1.2em` Realworld tutorials
+      :link: real_world_tutorial/index
+      :link-type: doc
+      :class-card: sd-shadow-sm
+
+      Run the same skills on real hardware.

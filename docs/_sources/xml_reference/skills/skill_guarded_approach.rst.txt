@@ -95,5 +95,4 @@ Examples
 * :doc:`../examples/dual_robot/dual_robot_forces_xml`
 * :doc:`../examples/monitors/multiple_events_in_same_skill_xml`
 * :doc:`../examples/rosless/forces_rosless_xml`
-* :doc:`../examples/rosless/frames_from_yaml_rosless_xml`
 * :doc:`../examples/scripts/logging_xml`

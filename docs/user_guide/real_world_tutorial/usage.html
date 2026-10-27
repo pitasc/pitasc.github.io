@@ -1,0 +1,1484 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Usage &mdash; pitasc 7b648075 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=fddb752b" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=4e2b93b8"></script>
+      <script src="../../_static/doctools.js?v=888ff710"></script>
+      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tutorial Parkour" href="tutorial_parkours.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            pitasc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#system-requirements">System requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#using-the-installer">Using the installer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#ros-based-version">ROS-based version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#ros-less-rl-version-for-ubuntu-20-04-lts">ROS-less (RL) version for Ubuntu 20.04 (LTS)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#post-installation-steps">Post-installation steps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#recommended-configure-the-newly-extracted-version-as-the-current-version">Recommended: Configure the newly-extracted version as the current version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#optional-enable-pitasc-by-default-for-the-current-user">Optional: Enable pitasc by default for the current user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#set-up-a-license">Set up a license</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#activate-pitasc">Activate pitasc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#uninstall-pitasc">Uninstall pitasc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#run-an-example">Run an example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#example-skills">Example skills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started.html#moving-to-the-pre-position">1. Moving to the pre-position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started.html#establishing-contact">2. Establishing contact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started.html#controlling-the-contact-force">3. Controlling the contact force</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started.html#sliding-along-the-surface">4. Sliding along the surface</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#next-steps">Next steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/index.html">Fundamentals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fundamentals/parameter.html">Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../fundamentals/parameter.html#general-structure"><strong>General structure</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../fundamentals/parameter.html#data-type-vs-prototype"><strong>data_type vs prototype</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../fundamentals/parameter.html#parameter-basic-types"><strong>Parameter basic types</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../fundamentals/parameter.html#restrictions"><strong>Restrictions</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../fundamentals/parameter.html#lists-naming"><strong>Lists &amp; Naming</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../fundamentals/skill.html">Skills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../fundamentals/skill.html#general-structure"><strong>General structure</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../fundamentals/script.html">Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../fundamentals/script.html#general-structure"><strong>General structure</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../fundamentals/monitor.html">Monitors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../fundamentals/monitor.html#general-structure"><strong>General structure</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../fundamentals/transition.html">Transitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../fundamentals/transition.html#general-structure"><strong>General structure</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../fundamentals/application.html">Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/index.html">How-To</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/beginner/index.html">Beginner</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../how-to/beginner/How_to_start_an_application.html">How to start an application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../how-to/beginner/How_to_start_an_application.html#file-reader">File reader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../how-to/beginner/How_to_start_an_application.html#executor">Executor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../how-to/beginner/How_to_start_an_application.html#pi-teacher-gui">Pi Teacher (GUI)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../how-to/beginner/How_to_start_an_application.html#python-api">Python API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../how-to/beginner/How_to_create_an_application.html">How to create an application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../how-to/beginner/How_to_add_a_robot_to_an_application.html">How to add a robot to an application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../how-to/beginner/How_to_add_a_skill_to_an_application.html">How to add a skill to an application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../how-to/beginner/How_to_set_the_value_of_a_parameter.html">How to set the value of a parameter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../how-to/beginner/How_to_attach_a_monitor_to_a_skill.html">How to attach a monitor to a Skill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../how-to/beginner/How_to_attach_a_script_to_a_skill.html">How to attach a script to a skill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../how-to/beginner/How_to_log_data.html">How to log data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../how-to/beginner/How_to_log_data.html#scripts">Scripts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../how-to/beginner/How_to_log_data.html#skills">Skills</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/advanced/index.html">Advanced</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../how-to/advanced/How_to_create_a_custom_skill.html">How to create a custom skill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../how-to/advanced/How_to_add_a_parameter_to_a_skill_monitor_etc.html">How to add a parameter to a skill, monitor, …</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../how-to/advanced/How_to_create_a_custom_script.html">How to create a custom script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../how-to/advanced/How_to_create_a_custom_script.html#xml">XML</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../how-to/advanced/How_to_create_a_custom_script.html#c">C++</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../how-to/advanced/How_to_create_a_custom_monitor.html">How to create a custom monitor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../how-to/advanced/How_to_create_a_custom_monitor.html#xml">XML</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../how-to/advanced/How_to_create_a_custom_monitor.html#c">C++</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../how-to/advanced/How_to_access_parameter_inside_cpp_files.html">How to access parameters inside cpp files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../how-to/advanced/How_to_use_the_operator_class.html">How to use the operator class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../how-to/advanced/How_to_use_the_operator_class.html#xml"><strong>xml</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../how-to/advanced/How_to_use_the_operator_class.html#c"><strong>C++</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Realworld tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#before-you-start">Before you start</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="overview.html">Overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview.html#what-you-will-learn">What you will learn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview.html#example-parkours">Example parkours</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview.html#requirements">Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#software-requirements">Software requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-start-the-program">How to start the program</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#teaching-frames">Teaching frames</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_parkours.html">Tutorial Parkour</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_parkour_0.html">Simple Maze – Cartesian Space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_parkour_1.html">Guided Insertion Operation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_parkour_2.html">Complex Maze with Hatch - Cartesian Space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_parkours.html#choose-a-tutorial">Choose a tutorial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_parkours.html#at-a-glance">At a glance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_parkours.html#tutorial-details">Tutorial details</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../setup_robots.html">Setup Robots</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../setup_ur.html">Setup UR Robot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../setup_ur.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../setup_ur.html#install-ur-driver-and-setup">Install UR driver and setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../setup_ur.html#setup-the-network-connection">Setup the network connection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup_ur.html#set-up-the-robot">Set up the robot</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../setup_ur.html#ros-launch-file">ROS launch file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../setup_ur.html#pitasc-environment">pitasc environment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../setup_kuka.html">Setup KUKA Robot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../setup_kuka.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../setup_kuka.html#install-driver-and-setup">Install driver and setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../setup_kuka.html#notes">Notes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup_kuka.html#optional">Optional</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../setup_kuka.html#ros-launch-file">ROS launch file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../setup_kuka.html#pitasc-environment">pitasc environment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">XML Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../xml_reference/skills/index.html">Skills</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/skills/index.html#composition">composition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_app.html">skill_app</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_app.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_app.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_app.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_concurrency.html">skill_concurrency</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_concurrency.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_concurrency.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_concurrency.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_sequence.html">skill_guarded_sequence</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_sequence.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_sequence.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_sequence.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_sequence_with_start.html">skill_guarded_sequence_with_start</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_sequence_with_start.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_sequence_with_start.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_sequence_with_start.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_parallel.html">skill_parallel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_parallel.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_parallel.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_parallel.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_sequence.html">skill_sequence</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_sequence.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_sequence.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_sequence.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_statechart.html">skill_statechart</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_statechart.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_statechart.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_statechart.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/skills/index.html#position-controlled">position_controlled</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/loop_target.html">loop_target</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/loop_target.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/loop_target.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/loop_target.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_approach.html">skill_approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_approach.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_approach.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_approach.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian.html">skill_cartesian</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian_bound.html">skill_cartesian_bound</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian_bound.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian_bound.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian_bound.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian_tracking.html">skill_cartesian_tracking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian_tracking.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian_tracking.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian_tracking.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian_tracking_pid.html">skill_cartesian_tracking_pid</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian_tracking_pid.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian_tracking_pid.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian_tracking_pid.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical.html">skill_cylindrical</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical_positioning.html">skill_cylindrical_positioning</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical_positioning.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical_positioning.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical_positioning.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical_tracking.html">skill_cylindrical_tracking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical_tracking.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical_tracking.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical_tracking.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_hold_duration.html">skill_hold_duration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_hold_duration.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_hold_duration.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_hold_duration.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_hold_pose.html">skill_hold_pose</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_hold_pose.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_hold_pose.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_hold_pose.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_joint_space.html">skill_joint_space</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_joint_space.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_joint_space.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_joint_space.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_joint_space_bound.html">skill_joint_space_bound</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_joint_space_bound.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_joint_space_bound.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_joint_space_bound.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_joint_space_tracking.html">skill_joint_space_tracking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_joint_space_tracking.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_joint_space_tracking.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_joint_space_tracking.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_lin.html">skill_lin</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_lin.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_lin.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_lin.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_lin_time_optimal.html">skill_lin_time_optimal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_lin_time_optimal.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_lin_time_optimal.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_lin_time_optimal.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_lin_time_optimal_ruckig.html">skill_lin_time_optimal_ruckig</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_lin_time_optimal_ruckig.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_lin_time_optimal_ruckig.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_lin_time_optimal_ruckig.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_lin_trajectory.html">skill_lin_trajectory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_lin_trajectory.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_lin_trajectory.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_lin_trajectory.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_lin_trajectory_base.html">skill_lin_trajectory_base</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_lin_trajectory_base.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_lin_trajectory_base.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_lin_trajectory_base.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_lin_trajectory_pd.html">skill_lin_trajectory_pd</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_lin_trajectory_pd.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_lin_trajectory_pd.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_lin_trajectory_pd.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_log_cartesian.html">skill_log_cartesian</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_log_cartesian.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_log_cartesian.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_log_cartesian.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_partial_lin.html">skill_partial_lin</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_partial_lin.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_partial_lin.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_partial_lin.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_ptp.html">skill_ptp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_ptp.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_ptp.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_ptp.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_ptp_time_optimal.html">skill_ptp_time_optimal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_ptp_time_optimal.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_ptp_time_optimal.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_ptp_time_optimal.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_ptp_trajectory.html">skill_ptp_trajectory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_ptp_trajectory.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_ptp_trajectory.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_ptp_trajectory.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_relative_lin.html">skill_relative_lin</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_relative_lin.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_relative_lin.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_relative_lin.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_relative_ptp.html">skill_relative_ptp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_relative_ptp.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_relative_ptp.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_relative_ptp.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_spherical.html">skill_spherical</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_spherical.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_spherical.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_spherical.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_spherical_positioning.html">skill_spherical_positioning</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_spherical_positioning.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_spherical_positioning.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_spherical_positioning.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_spherical_tracking.html">skill_spherical_tracking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_spherical_tracking.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_spherical_tracking.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_spherical_tracking.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_wait_for_transform.html">skill_wait_for_transform</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_wait_for_transform.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_wait_for_transform.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_wait_for_transform.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/skills/index.html#force-controlled">force_controlled</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_apply_force.html">skill_apply_force</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_apply_force.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_apply_force.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_apply_force.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_apply_force_pid.html">skill_apply_force_pid</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_apply_force_pid.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_apply_force_pid.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_apply_force_pid.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_force.html">skill_force</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_force.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_force.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_force.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_approach.html">skill_guarded_approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_approach.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_approach.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_approach.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_lin.html">skill_guarded_lin</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_lin.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_lin.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_lin.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_lin_ruckig.html">skill_guarded_lin_ruckig</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_lin_ruckig.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_lin_ruckig.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_lin_ruckig.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_sequence.html">skill_guarded_sequence</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_sequence.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_sequence.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_sequence.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_sequence_with_start.html">skill_guarded_sequence_with_start</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_sequence_with_start.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_sequence_with_start.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_sequence_with_start.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_slide.html">skill_guarded_slide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_slide.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_slide.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_guarded_slide.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_insert.html">skill_insert</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_insert.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_insert.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_insert.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_log_force.html">skill_log_force</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_log_force.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_log_force.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_log_force.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_pivot.html">skill_pivot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_pivot.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_pivot.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_pivot.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_push.html">skill_push</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_push.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_push.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_push.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_push_duration.html">skill_push_duration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_push_duration.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_push_duration.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_push_duration.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_push_settle.html">skill_push_settle</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_push_settle.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_push_settle.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_push_settle.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_slide.html">skill_slide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_slide.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_slide.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_slide.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_slide_relative.html">skill_slide_relative</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_slide_relative.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_slide_relative.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_slide_relative.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/skills/index.html#velocity-controlled">velocity_controlled</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian_velocity.html">skill_cartesian_velocity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian_velocity.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian_velocity.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cartesian_velocity.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_conical_helix.html">skill_conical_helix</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_conical_helix.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_conical_helix.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_conical_helix.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical_helix.html">skill_cylindrical_helix</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical_helix.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical_helix.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical_helix.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical_velocity.html">skill_cylindrical_velocity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical_velocity.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical_velocity.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_cylindrical_velocity.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_partial_velocity.html">skill_partial_velocity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_partial_velocity.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_partial_velocity.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_partial_velocity.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_partial_velocity_duration.html">skill_partial_velocity_duration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_partial_velocity_duration.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_partial_velocity_duration.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_partial_velocity_duration.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_partial_velocity_relative_distance.html">skill_partial_velocity_relative_distance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_partial_velocity_relative_distance.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_partial_velocity_relative_distance.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_partial_velocity_relative_distance.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_spherical_velocity.html">skill_spherical_velocity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_spherical_velocity.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_spherical_velocity.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_spherical_velocity.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/skills/index.html#logic">logic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/frame_editor_align.html">frame_editor_align</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_align.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_align.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_align.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/frame_editor_copy.html">frame_editor_copy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_copy.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_copy.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_copy.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/frame_editor_load_yaml.html">frame_editor_load_yaml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_load_yaml.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_load_yaml.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_load_yaml.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/frame_editor_remove.html">frame_editor_remove</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_remove.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_remove.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_remove.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/frame_editor_save_yaml.html">frame_editor_save_yaml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_save_yaml.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_save_yaml.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_save_yaml.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/frame_editor_set.html">frame_editor_set</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_set.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_set.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_set.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/frame_editor_set_parent.html">frame_editor_set_parent</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_set_parent.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_set_parent.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/frame_editor_set_parent.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_counter_condition.html">skill_counter_condition</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_counter_condition.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_counter_condition.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_counter_condition.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_idle.html">skill_idle</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_idle.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_idle.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_idle.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_idle_duration.html">skill_idle_duration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_idle_duration.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_idle_duration.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_idle_duration.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_idle_once.html">skill_idle_once</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_idle_once.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_idle_once.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_idle_once.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_preempt.html">skill_preempt</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_preempt.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_preempt.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_preempt.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/skills/index.html#user">user</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/skills/skill_user_confirm.html">skill_user_confirm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_user_confirm.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_user_confirm.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/skills/skill_user_confirm.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../xml_reference/monitors/index.html">Monitors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/monitors/index.html#geometry">geometry</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_distance.html">monitor_distance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_distance.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_distance.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_distance.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_frame_in_box.html">monitor_frame_in_box</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_frame_in_box.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_frame_in_box.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_frame_in_box.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_relative_distance.html">monitor_relative_distance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_relative_distance.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_relative_distance.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_relative_distance.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_wait_for_transform.html">monitor_wait_for_transform</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_wait_for_transform.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_wait_for_transform.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_wait_for_transform.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/monitors/index.html#io">io</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_bool_topic.html">monitor_ros_bool_topic</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_bool_topic.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_bool_topic.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_bool_topic.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_empty_service.html">monitor_ros_empty_service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_empty_service.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_empty_service.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_empty_service.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_fireevent_rostopic.html">monitor_ros_fireevent_rostopic</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_fireevent_rostopic.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_fireevent_rostopic.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_fireevent_rostopic.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_fireevent_service.html">monitor_ros_fireevent_service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_fireevent_service.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_fireevent_service.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_fireevent_service.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_int16_topic.html">monitor_ros_int16_topic</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_int16_topic.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_int16_topic.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_int16_topic.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_int32_topic.html">monitor_ros_int32_topic</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_int32_topic.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_int32_topic.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_int32_topic.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_int64_topic.html">monitor_ros_int64_topic</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_int64_topic.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_int64_topic.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_int64_topic.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_int8_topic.html">monitor_ros_int8_topic</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_int8_topic.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_int8_topic.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_int8_topic.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_setbool_service.html">monitor_ros_setbool_service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_setbool_service.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_setbool_service.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_setbool_service.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_trigger_service.html">monitor_ros_trigger_service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_trigger_service.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_trigger_service.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_trigger_service.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_uint16_topic.html">monitor_ros_uint16_topic</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_uint16_topic.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_uint16_topic.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_uint16_topic.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_uint32_topic.html">monitor_ros_uint32_topic</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_uint32_topic.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_uint32_topic.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_uint32_topic.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_uint64_topic.html">monitor_ros_uint64_topic</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_uint64_topic.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_uint64_topic.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_uint64_topic.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_uint8_topic.html">monitor_ros_uint8_topic</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_uint8_topic.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_uint8_topic.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_ros_uint8_topic.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_user_confirm.html">monitor_user_confirm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_user_confirm.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_user_confirm.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_user_confirm.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/monitors/index.html#logic">logic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_duration.html">monitor_duration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_duration.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_duration.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_duration.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_execution_counter.html">monitor_execution_counter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_execution_counter.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_execution_counter.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_execution_counter.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_script_result.html">monitor_script_result</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_script_result.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_script_result.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_script_result.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_sync.html">monitor_sync</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_sync.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_sync.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_sync.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/monitors/index.html#measurements">measurements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_control_error.html">monitor_control_error</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_control_error.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_control_error.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_control_error.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/monitors/monitor_threshold.html">monitor_threshold</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_threshold.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_threshold.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/monitors/monitor_threshold.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../xml_reference/scripts/index.html">Scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/scripts/index.html#frames">frames</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_align.html">script_frame_editor_align</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_align.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_align.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_align.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_copy.html">script_frame_editor_copy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_copy.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_copy.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_copy.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_load_yaml.html">script_frame_editor_load_yaml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_load_yaml.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_load_yaml.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_load_yaml.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_remove.html">script_frame_editor_remove</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_remove.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_remove.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_remove.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_save_yaml.html">script_frame_editor_save_yaml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_save_yaml.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_save_yaml.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_save_yaml.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_set.html">script_frame_editor_set</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_set.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_set.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_set.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_set_parent.html">script_frame_editor_set_parent</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_set_parent.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_set_parent.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_frame_editor_set_parent.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_set_frame.html">script_set_frame</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_set_frame.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_set_frame.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_set_frame.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_set_frame_rotvec.html">script_set_frame_rotvec</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_set_frame_rotvec.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_set_frame_rotvec.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_set_frame_rotvec.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_sinus_frame.html">script_sinus_frame</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_sinus_frame.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_sinus_frame.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_sinus_frame.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_temp_frame.html">script_temp_frame</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_temp_frame.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_temp_frame.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_temp_frame.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_temp_frame_from_force.html">script_temp_frame_from_force</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_temp_frame_from_force.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_temp_frame_from_force.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_temp_frame_from_force.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/scripts/index.html#io">io</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_call_empty_srvs.html">script_call_empty_srvs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_call_empty_srvs.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_call_empty_srvs.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_call_empty_srvs.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_call_setbool_srvs.html">script_call_setbool_srvs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_call_setbool_srvs.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_call_setbool_srvs.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_call_setbool_srvs.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_call_trigger_srvs.html">script_call_trigger_srvs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_call_trigger_srvs.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_call_trigger_srvs.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_call_trigger_srvs.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/scripts/index.html#logging">logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_error_logger.html">script_error_logger</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_error_logger.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_error_logger.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_error_logger.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_measurement_logger.html">script_measurement_logger</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_measurement_logger.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_measurement_logger.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_measurement_logger.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/scripts/index.html#publisher">publisher</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_external_topic_logger.html">script_external_topic_logger</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_external_topic_logger.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_external_topic_logger.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_external_topic_logger.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_measurement_publisher.html">script_measurement_publisher</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_measurement_publisher.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_measurement_publisher.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_measurement_publisher.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/scripts/script_topic_logger.html">script_topic_logger</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_topic_logger.html#meta-data">Meta data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_topic_logger.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/scripts/script_topic_logger.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../xml_reference/examples/index.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/examples/index.html#advanced">advanced</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/advanced/strings_xml.html">strings.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/advanced/strings_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/advanced/strings_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/examples/index.html#beginner">beginner</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/beginner/forces_xml.html">forces.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/forces_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/forces_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/beginner/forces_feedforward_xml.html">forces_feedforward.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/forces_feedforward_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/forces_feedforward_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/beginner/forces_with_description_xml.html">forces_with_description.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/forces_with_description_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/forces_with_description_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/beginner/free_drive_xml.html">free_drive.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/free_drive_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/free_drive_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/beginner/move_math_parser_xml.html">move_math_parser.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/move_math_parser_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/move_math_parser_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/beginner/multiple_apps_xml.html">multiple_apps.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/multiple_apps_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/multiple_apps_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/beginner/rosservice_calls_xml.html">rosservice_calls.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/rosservice_calls_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/rosservice_calls_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/beginner/scrollable_multiple_apps_xml.html">scrollable_multiple_apps.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/scrollable_multiple_apps_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/scrollable_multiple_apps_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/beginner/simple_count_xml.html">simple_count.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/simple_count_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/simple_count_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/beginner/simple_idle_xml.html">simple_idle.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/simple_idle_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/simple_idle_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/beginner/simple_move_xml.html">simple_move.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/simple_move_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/simple_move_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/beginner/skill_concurrency_xml.html">skill_concurrency.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/skill_concurrency_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/skill_concurrency_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/beginner/skill_parallel_xml.html">skill_parallel.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/skill_parallel_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/skill_parallel_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/beginner/skill_sequence_xml.html">skill_sequence.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/skill_sequence_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/skill_sequence_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/beginner/skill_statechart_xml.html">skill_statechart.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/skill_statechart_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/skill_statechart_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/beginner/track_frame_xml.html">track_frame.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/track_frame_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/track_frame_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/beginner/track_frame_500hz_xml.html">track_frame_500hz.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/track_frame_500hz_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/track_frame_500hz_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/beginner/transitions_xml.html">transitions.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/transitions_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/beginner/transitions_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/examples/index.html#customized-robots">customized_robots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/customized_robots/linear_axis_xml.html">linear_axis.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/customized_robots/linear_axis_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/customized_robots/linear_axis_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/customized_robots/mimic_gripper_xml.html">mimic_gripper.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/customized_robots/mimic_gripper_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/customized_robots/mimic_gripper_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/examples/index.html#dual-robot">dual_robot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/dual_robot/bounds_dual_robot_xml.html">bounds_dual_robot.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/dual_robot/bounds_dual_robot_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/dual_robot/bounds_dual_robot_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/dual_robot/dual_robot_forces_xml.html">dual_robot_forces.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/dual_robot/dual_robot_forces_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/dual_robot/dual_robot_forces_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/dual_robot/simple_dual_robot_xml.html">simple_dual_robot.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/dual_robot/simple_dual_robot_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/dual_robot/simple_dual_robot_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/examples/index.html#monitors">monitors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/monitors/geometry_xml.html">geometry.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/monitors/geometry_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/monitors/geometry_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/monitors/io_xml.html">io.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/monitors/io_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/monitors/io_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/monitors/measurements_xml.html">measurements.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/monitors/measurements_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/monitors/measurements_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/monitors/multiple_events_in_same_skill_xml.html">multiple_events_in_same_skill.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/monitors/multiple_events_in_same_skill_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/monitors/multiple_events_in_same_skill_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/monitors/switch_skill_with_rosservice_xml.html">switch_skill_with_rosservice.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/monitors/switch_skill_with_rosservice_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/monitors/switch_skill_with_rosservice_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/monitors/sync_xml.html">sync.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/monitors/sync_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/monitors/sync_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/monitors/user_confirm_xml.html">user_confirm.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/monitors/user_confirm_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/monitors/user_confirm_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/examples/index.html#rosless">rosless</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/rosless/forces_rosless_xml.html">forces_rosless.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/rosless/forces_rosless_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/rosless/forces_rosless_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/rosless/simple_move_rosless_xml.html">simple_move_rosless.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/rosless/simple_move_rosless_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/rosless/simple_move_rosless_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/examples/index.html#scripts">scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/scripts/frame_editor_xml.html">frame_editor.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/scripts/frame_editor_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/scripts/frame_editor_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/scripts/io_xml.html">io.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/scripts/io_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/scripts/io_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/scripts/logging_xml.html">logging.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/scripts/logging_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/scripts/logging_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/scripts/temp_frame_xml.html">temp_frame.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/scripts/temp_frame_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/scripts/temp_frame_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../xml_reference/examples/index.html#skills">skills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/skills/blacklist_xml.html">blacklist.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/blacklist_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/blacklist_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/skills/bound_example_xml.html">bound_example.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/bound_example_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/bound_example_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/skills/conical_helix_xml.html">conical_helix.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/conical_helix_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/conical_helix_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/skills/cylindrical_helix_xml.html">cylindrical_helix.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/cylindrical_helix_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/cylindrical_helix_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/skills/forces_pid_xml.html">forces_pid.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/forces_pid_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/forces_pid_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/skills/guarded_sequence_xml.html">guarded_sequence.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/guarded_sequence_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/guarded_sequence_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/skills/lin_time_optimal_xml.html">lin_time_optimal.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/lin_time_optimal_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/lin_time_optimal_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/skills/lin_time_optimal_ruckig_xml.html">lin_time_optimal_ruckig.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/lin_time_optimal_ruckig_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/lin_time_optimal_ruckig_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/skills/lin_trajectory_xml.html">lin_trajectory.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/lin_trajectory_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/lin_trajectory_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/skills/partial_lin_xml.html">partial_lin.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/partial_lin_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/partial_lin_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/skills/position_pid_xml.html">position_pid.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/position_pid_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/position_pid_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/skills/ptp_trajectory_xml.html">ptp_trajectory.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/ptp_trajectory_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/ptp_trajectory_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/skills/ruckig_guarded_lin_xml.html">ruckig_guarded_lin.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/ruckig_guarded_lin_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/ruckig_guarded_lin_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../xml_reference/examples/skills/spherical_velocity_xml.html">spherical_velocity.xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/spherical_velocity_xml.html#models-used">Models used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../xml_reference/examples/skills/spherical_velocity_xml.html#file-contents">File contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api_reference/python/index.html">Python API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api_reference/python/index.html#model-access">Model access</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api_reference/python/pitasc_model.html">pitasc.model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/pitasc_model.html#pitasc.model.Model"><code class="docutils literal notranslate"><span class="pre">Model</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api_reference/python/pitasc_model_interface.html">pitasc.model_interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/pitasc_model_interface.html#pitasc.model_interface.SimpleInterface"><code class="docutils literal notranslate"><span class="pre">SimpleInterface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api_reference/python/pitasc_parameter_model.html">pitasc.parameter_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/pitasc_parameter_model.html#pitasc.parameter_model.Parameter"><code class="docutils literal notranslate"><span class="pre">Parameter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/pitasc_parameter_model.html#pitasc.parameter_model.ParameterBasic"><code class="docutils literal notranslate"><span class="pre">ParameterBasic</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/pitasc_parameter_model.html#pitasc.parameter_model.ParameterDict"><code class="docutils literal notranslate"><span class="pre">ParameterDict</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/pitasc_parameter_model.html#pitasc.parameter_model.ParameterList"><code class="docutils literal notranslate"><span class="pre">ParameterList</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/pitasc_parameter_model.html#pitasc.parameter_model.ParameterModel"><code class="docutils literal notranslate"><span class="pre">ParameterModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/pitasc_parameter_model.html#pitasc.parameter_model.ParameterNone"><code class="docutils literal notranslate"><span class="pre">ParameterNone</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/pitasc_parameter_model.html#pitasc.parameter_model.ParameterOrderedDict"><code class="docutils literal notranslate"><span class="pre">ParameterOrderedDict</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api_reference/python/pitasc_model_element.html">pitasc.model_element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/pitasc_model_element.html#pitasc.model_element.PitascModelElement"><code class="docutils literal notranslate"><span class="pre">PitascModelElement</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/pitasc_model_element.html#pitasc.model_element.convert_value_to_str"><code class="docutils literal notranslate"><span class="pre">convert_value_to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api_reference/python/index.html#runtime-access">Runtime access</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api_reference/python/cppitasc_logging.html">cppitasc.logging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/cppitasc_logging.html#cppitasc.logging.debug"><code class="docutils literal notranslate"><span class="pre">debug()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/cppitasc_logging.html#cppitasc.logging.error"><code class="docutils literal notranslate"><span class="pre">error()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/cppitasc_logging.html#cppitasc.logging.fatal"><code class="docutils literal notranslate"><span class="pre">fatal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/cppitasc_logging.html#cppitasc.logging.info"><code class="docutils literal notranslate"><span class="pre">info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/cppitasc_logging.html#cppitasc.logging.set_log_level"><code class="docutils literal notranslate"><span class="pre">set_log_level()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/cppitasc_logging.html#cppitasc.logging.warn"><code class="docutils literal notranslate"><span class="pre">warn()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api_reference/python/cppitasc_runtime.html">cppitasc.runtime</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/cppitasc_runtime.html#cppitasc.runtime.Executor"><code class="docutils literal notranslate"><span class="pre">Executor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/cppitasc_runtime.html#cppitasc.runtime.RuntimeAccess"><code class="docutils literal notranslate"><span class="pre">RuntimeAccess</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api_reference/python/cppitasc_runtime.html#cppitasc.runtime.roscpp_init"><code class="docutils literal notranslate"><span class="pre">roscpp_init()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.pitasc.fraunhofer.de/en.html">About</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.pitasc.fraunhofer.de/en/contact.html">Contact</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pitasc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Realworld tutorials</a></li>
+      <li class="breadcrumb-item active">Usage</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/user_guide/real_world_tutorial/usage.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Always re-teach <strong>all</strong> TF frames to match your physical hardware setup
+before running a parkour. Running with mismatched frames can damage the
+robot, the gripper or the workpiece.</p>
+</div>
+<section id="how-to-start-the-program">
+<h2>How to start the program<a class="headerlink" href="#how-to-start-the-program" title="Permalink to this heading"></a></h2>
+<p>The tutorial needs <strong>three terminals</strong>. Run the steps in the given order and
+keep every terminal open.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-play" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zM6.379 5.227A.25.25 0 006 5.442v5.117a.25.25 0 00.379.214l4.264-2.559a.25.25 0 000-.428L6.379 5.227z"></path></svg> 1 · Launch the parkour</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>pitasc_realworld_tutorial<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>&lt;launch_file_name&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-cpu" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M6.5.75a.75.75 0 00-1.5 0V2H3.75A1.75 1.75 0 002 3.75V5H.75a.75.75 0 000 1.5H2v3H.75a.75.75 0 000 1.5H2v1.25c0 .966.784 1.75 1.75 1.75H5v1.25a.75.75 0 001.5 0V14h3v1.25a.75.75 0 001.5 0V14h1.25A1.75 1.75 0 0014 12.25V11h1.25a.75.75 0 000-1.5H14v-3h1.25a.75.75 0 000-1.5H14V3.75A1.75 1.75 0 0012.25 2H11V.75a.75.75 0 00-1.5 0V2h-3V.75zm5.75 11.75h-8.5a.25.25 0 01-.25-.25v-8.5a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v8.5a.25.25 0 01-.25.25zM5.75 5a.75.75 0 00-.75.75v4.5c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-4.5a.75.75 0 00-.75-.75h-4.5zm.75 4.5v-3h3v3h-3z"></path></svg> 2 · Start the executor</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pitasc_executor_rossrv<span class="w"> </span>-t
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-browser" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25V4.5h2v-2H1.75zM5 2.5v2h2v-2H5zm3.5 0v2h6V2.75a.25.25 0 00-.25-.25H8.5zm6 3.5h-13v7.25c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V6z"></path></svg> 3 · Start piteacher</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rqt<span class="w"> </span>-s<span class="w"> </span>pi_teacher
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class="rubric">4 · Load the application</p>
+<p>In rqt, load the desired application XML. You can either use the provided
+sample solution or create your own pitasc application in the <code class="docutils literal notranslate"><span class="pre">application</span></code>
+directory.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../how-to/beginner/How_to_create_an_application.html"><span class="doc">How to create an application</span></a></p>
+</div>
+</section>
+<section id="teaching-frames">
+<h2>Teaching frames<a class="headerlink" href="#teaching-frames" title="Permalink to this heading"></a></h2>
+<p>Each tutorial ships with several <a class="reference external" href="https://wiki.ros.org/tf">TF frames</a> that
+define the positions and orientations of the robot’s end-effector.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Your situation</p></th>
+<th class="head"><p>What to do</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Using the <strong>sample solution</strong></p></td>
+<td><p>Re-teach <strong>all</strong> frames according to your hardware setup.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Creating <strong>your own application</strong></p></td>
+<td><p>Either reuse the provided frames (re-teach them first) or teach new ones.</p></td>
+</tr>
+</tbody>
+</table>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-question" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zM6.92 6.085c.081-.16.19-.299.34-.398.145-.097.371-.187.74-.187.28 0 .553.087.738.225A.613.613 0 019 6.25c0 .177-.04.264-.077.318a.956.956 0 01-.277.245c-.076.051-.158.1-.258.161l-.007.004a7.728 7.728 0 00-.313.195 2.416 2.416 0 00-.692.661.75.75 0 001.248.832.956.956 0 01.276-.245 6.3 6.3 0 01.26-.16l.006-.004c.093-.057.204-.123.313-.195.222-.149.487-.355.692-.662.214-.32.329-.702.329-1.15 0-.76-.36-1.348-.863-1.725A2.76 2.76 0 008 4c-.631 0-1.155.16-1.572.438-.413.276-.68.638-.849.977a.75.75 0 101.342.67z"></path></svg></span>How do I teach a frame?<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Frames are taught with the <strong>frame editor</strong> rqt plugin. Installation and
+usage instructions are available in the package index:
+<a class="reference external" href="https://index.ros.org/r/frame_editor/#noetic">frame_editor</a></p>
+</div>
+</details></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_parkours.html" class="btn btn-neutral float-right" title="Tutorial Parkour" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Pitasc Team.
+      <span class="lastupdated">Last updated on Oct 27, 2026, 4:20:27 PM.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

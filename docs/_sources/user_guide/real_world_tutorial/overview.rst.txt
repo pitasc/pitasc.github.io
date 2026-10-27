@@ -1,0 +1,92 @@
+========
+Overview
+========
+
+.. rst-class:: tutorial-meta
+
+|badge-level| |badge-time| |badge-hardware|
+
+.. |badge-level| image:: https://img.shields.io/badge/level-beginner-brightgreen
+.. |badge-time| image:: https://img.shields.io/badge/duration-~2h-blue
+.. |badge-hardware| image:: https://img.shields.io/badge/hardware-optional-lightgrey
+
+This tutorial provides a practical introduction on how to develop pitasc
+applications using examples you can follow **without prior experience** with
+pitasc. The documentation includes training courses with detailed information
+about the requirements, setup, and completion of the tutorial parkour courses.
+
+
+What you will learn
+===================
+
+.. grid:: 1 2 2 3
+   :gutter: 3
+
+   .. grid-item-card:: :octicon:`tools` Setup
+      :link: setup
+      :link-type: doc
+
+      Install pitasc, prepare the workspace and verify your toolchain.
+
+   .. grid-item-card:: :octicon:`beaker` Simulation
+      :link: simulation
+      :link-type: doc
+
+      Run the parkour courses in simulation before touching real hardware.
+
+   .. grid-item-card:: :octicon:`rocket` Real world
+      :link: real_world
+      :link-type: doc
+
+      Transfer your application to a physical robot and run the parkour.
+
+
+Example parkours
+================
+
+.. grid:: 1 1 2 2
+   :gutter: 3
+
+   .. grid-item::
+
+      .. video:: /_videos/real_world_tutorial/parkour_0/pitasc_realworld_tutorial_0.mp4
+         :caption: Parkour 0 – Example parkour showcasing surface guided motion using force feedback
+                   on the peg from maze walls
+         :width: 100%
+
+   .. grid-item::
+
+      .. video:: /_videos/real_world_tutorial/parkour_1/pitasc_realworld_tutorial_p1.mp4
+         :caption: Parkour 1 – Example parkour showcasing insertion of a workpiece into and
+             retrieval from a guide
+         :width: 100%
+
+   .. grid-item::
+
+      .. video:: /_videos/real_world_tutorial/parkour_2/pitasc_realworld_tutorial_2.mp4
+         :caption: Parkour 2 – Example parkour showcasing force-feedback based door opening
+             combined with a multi-section maze featuring a slope and a curve
+         :width: 100%
+
+
+
+Requirements
+============
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 35 40
+
+   * - Category
+     - Requirement
+     - Notes
+   * - OS
+     - Ubuntu 20.04 / 22.04
+     - Other distributions untested
+   * - ROS
+     - Noetic
+     - Must be sourced before starting
+   * - Hardware
+     - UR robot + guide fixture
+     - Optional – simulation works standalone
+

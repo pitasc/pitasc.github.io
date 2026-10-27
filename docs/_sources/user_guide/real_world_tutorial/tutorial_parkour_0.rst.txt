@@ -1,0 +1,447 @@
+.. _simple-maze-cartesian:
+
+=============================
+Simple Maze – Cartesian Space
+=============================
+
+.. admonition:: What you will learn
+   :class: tip
+
+   How to use several of pitasc's most common skills, including **linear
+   movements**, a **guarded approach** and different ways of using the
+   **slide** skill.
+
+.. rst-class:: tutorial-meta
+
+:bdg-primary:`Level: beginner` :bdg-secondary:`Cartesian space`
+:bdg-secondary:`force control` :bdg-info:`~60 min setup`
+
+
+.. contents:: On this page
+   :local:
+   :depth: 2
+
+
+Requirements
+============
+
+Hardware
+--------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Item
+     - Details
+   * - 3D printer
+     - For the parts listed in :ref:`parkour0-models`
+   * - Fasteners
+     - Screws ISO 4762 – M3x35 and nuts ISO 4032 – M3 (or comparable),
+       **7 pcs each**
+   * - Robot
+     - Any pitasc-compatible robot with a force/torque sensor.
+       This example uses a **UR5**.
+   * - Table *(recommended)*
+     - Welding table with 50 × 50 hole pattern, hole diameter 16 mm
+   * - Positioning bolts
+     - 16 mm, **4 – 6 pcs**
+
+Supported grippers
+------------------
+
+.. grid:: 1 2 2 4
+   :gutter: 2
+
+   .. grid-item-card:: Weiss WSG 50-110
+      :class-card: sd-shadow-sm
+
+      Used in this example. Requires **either**:
+
+      - ``F-WSG-FMF`` sensor fingers, **or**
+      - 2 × custom fingers (model 05 below)
+
+   .. grid-item-card:: Robotiq 2F-140
+      :class-card: sd-shadow-sm
+
+      Supported out of the box.
+
+   .. grid-item-card:: Robotiq 2F-85
+      :class-card: sd-shadow-sm
+
+      Supported out of the box.
+
+   .. grid-item-card:: Franka Hand
+      :class-card: sd-shadow-sm
+
+      Supported out of the box.
+
+
+.. _parkour0-models:
+
+Provided 3D models
+==================
+
+All models are hosted on GrabCAD and available as ``.step``, ``.stl`` and
+``.sldprt``.
+
+.. list-table::
+   :widths: 10 35 30 25
+   :header-rows: 1
+   :class: model-table
+
+   * - #
+     - Preview
+     - Part
+     - Downloads
+
+   * - 01
+     - .. image:: /_images/real_world_tutorial/parkour_0/01_bottom.png
+          :alt: Lower section of the maze assembly
+          :width: 100%
+     - **Lower section**
+
+       .. note::
+          Print with the **chamfer facing up**.
+     - | `.step <https://grabcad.com/library/base-plate-45/details?folder_id=14283186>`__
+       | `.stl <https://grabcad.com/library/base-plate-45/details?folder_id=14283188>`__
+       | `.sldprt <https://grabcad.com/library/base-plate-45/details?folder_id=14283187>`__
+
+   * - 02
+     - .. image:: /_images/real_world_tutorial/parkour_0/02_upper_maze.png
+          :alt: Upper section containing the maze slot
+          :width: 100%
+     - **Upper section with maze**
+
+       .. note::
+          Print with the **largest surface facing down**.
+     - | `.step <https://grabcad.com/library/simple-maze-1/details?folder_id=14283180>`__
+       | `.stl <https://grabcad.com/library/simple-maze-1/details?folder_id=14283179>`__
+       | `.sldprt <https://grabcad.com/library/simple-maze-1/details?folder_id=14283178>`__
+
+   * - 03
+     - .. image:: /_images/real_world_tutorial/parkour_0/03_peg.png
+          :alt: Cylindrical peg
+          :width: 100%
+     - **Cylindrical peg**
+
+       The part that is guided through the maze.
+     - | `.step <https://grabcad.com/library/cylindrical-peg-2/details?folder_id=14283165>`__
+       | `.stl <https://grabcad.com/library/cylindrical-peg-2/details?folder_id=14283166>`__
+       | `.sldprt <https://grabcad.com/library/cylindrical-peg-2/details?folder_id=14283167>`__
+
+   * - 04
+     - .. image:: /_images/real_world_tutorial/parkour_0/04_peg_holder.png
+          :alt: Holding stand for the peg
+          :width: 100%
+     - **Peg holder**
+
+       Defines the pick and place pose of the peg.
+     - | `.step <https://grabcad.com/library/peg_holder-1/details?folder_id=14283157>`__
+       | `.stl <https://grabcad.com/library/peg_holder-1/details?folder_id=14283158>`__
+       | `.sldprt <https://grabcad.com/library/peg_holder-1/details?folder_id=14283159>`__
+
+   * - 05
+     - .. image:: /_images/real_world_tutorial/parkour_0/05_gripper_finger.png
+          :alt: Custom prismatic gripper fingers
+          :width: 100%
+     - **Custom gripper fingers**
+
+       For the Weiss WSG 50-110 only.
+
+       .. note::
+          Print with the **largest surface facing down**.
+     - | `.step <https://grabcad.com/library/gripper-finger-2/details?folder_id=14283386>`__
+       | `.stl <https://grabcad.com/library/gripper-finger-2/details?folder_id=14283385>`__
+       | `.sldprt <https://grabcad.com/library/gripper-finger-2/details?folder_id=14283384>`__
+
+
+Setup
+=====
+
+Step 1 - Print the parts
+------------------------
+
+Print the lower and upper section, the cylindrical peg carrier and the cylindrical
+peg. Also as per your gripper, print the custom gripper fingers to hold the cylindrical peg.
+
+.. warning::
+   Tolerances were tested on a **Bambu Lab X1** - adjust if needed..
+
+Step 2 - Assemble the station
+-----------------------------
+
+Assemble the lower and upper section using the screws and nuts.
+
+.. figure:: /_images/real_world_tutorial/parkour_0/simple_maze_assembly.png
+   :alt: Assembling the parts
+   :width: 90%
+   :align: center
+
+   Assembly of the 3D-printed parts with bottom stand and top layer with maze.
+
+Step 3 - Clamp everything to the table
+--------------------------------------
+
+Clamp the assembled station and the workpiece carrier to your table.
+
+.. figure:: /_images/real_world_tutorial/parkour_0/p0_example_configuration.jpeg
+   :alt: Example table configuration
+   :width: 90%
+   :align: center
+
+   Example configuration, allowing easy access to the cylindrical peg and a minimal
+   distance between the cylindrical peg holder and the simple maze.
+
+Step 4 - Position the cylindrical peg on the peg holder
+-------------------------------------------------------
+
+Place the cylindrical peg in the peg holder as shown below.
+
+.. figure:: /_images/real_world_tutorial/parkour_0/peg_in_peg_holder.png
+   :alt: Peg stand with cylindrical peg
+   :width: 90%
+   :align: center
+
+   Cylindrical peg in the peg holder.
+
+Step 5 - Mount the gripper fingers
+----------------------------------
+
+If needed, screw the custom 3D-printed gripper fingers onto the Weiss
+WSG 50-110 gripper.
+
+
+How to solve this parkour task
+==============================
+
+The task is to solve a maze using a cylindrical peg, as shown in the video
+below.
+
+.. video:: /_videos/real_world_tutorial/parkour_0/pitasc_realworld_tutorial_0.mp4
+   :width: 100%
+
+   Maze solving using a cylindrical peg
+
+Try it yourself
+---------------
+
+You can try to solve the task on your own by selecting appropriate skills and
+teaching the required poses.
+
+.. card:: Where to put your solution
+
+   Add your solution to:
+
+   .. code-block:: text
+
+      .../pitasc_realworld_tutorial_p0/apps/parkour_0.xml
+
+   Then start RViz and the frame editor with:
+
+   .. code-block:: bash
+
+      roslaunch pitasc_realworld_tutorial_p0 bringup_ur5_parkour_0.launch
+
+.. admonition:: Increasing levels of assistance
+   :class: important
+
+   The following sections progressively reveal more detail. Stop reading at
+   whichever level still leaves you with an interesting challenge.
+
+   #. :ref:`list-rough-steps` - the three high-level actions
+   #. :ref:`example-steps` - every individual motion, no code
+   #. :ref:`tips-on-skills` - which pitasc skills to reach for
+   #. :ref:`example-solution` - the full annotated XML
+
+
+.. _list-rough-steps:
+
+Level 1 – Rough steps
+---------------------
+
+The sample solution comprises the following rough steps. Each step is
+implemented as a skill sequence containing several skills:
+
+#. Pick up the rod from the holder.
+#. Solve the maze by moving from the start position to the end position.
+#. Place the rod back into the holder.
+
+
+.. _example-steps:
+
+Level 2 – Example steps in detail
+---------------------------------
+
+.. note::
+   For safety reasons, each step begins and ends with the robot moving to its
+   home pose by linear movement.
+
+Step 1 - Pick up the rod from the holder
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Move to home pose *(position controlled)*
+#. Move to a position above the workpiece carrier *(position controlled)*
+#. Lower the end effector to the gripping position *(position controlled)*
+#. Grip the rod *(command to your specific gripper)*
+#. Push down on the rod to ensure a safe grip
+   *(force controlled - only needed for flat gripper fingers)*
+#. Move upwards *(position controlled)*
+#. Move to home pose *(position controlled)*
+
+Step 2 - Solve the maze
+~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Move to home pose with the rod between the gripper fingers
+   *(position controlled)*
+#. Move linearly to a hover position above the maze *(position controlled)*
+#. Move to the approach position close to the maze start point
+   *(position controlled)*
+#. Establish contact between rod and maze *(force controlled)*
+#. Slide the rod through the maze while keeping a constant force of at least
+   **5 N** between rod and maze *(force controlled)*.
+
+   .. warning::
+      Write this skill **without hardcoding** the maze waypoints.
+
+   .. note::
+      The example code moves the robot so that the rod reaches the goal
+      position by utilising rod–wall interactions. The walls along the slot
+      can be used to guide the rod using force feedback.
+
+#. Once the rod reaches the goal position, the skill ends and the end effector
+   moves upwards.
+#. Move to home pose *(position controlled)*
+
+Step 3 - Place the rod back into the holder
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Move to home pose *(position controlled)*
+#. Move to a position above the workpiece carrier *(position controlled)*
+#. Place the rod in the holder by pushing down with a force of e.g. **10 N**
+   *(force controlled)*
+#. Open the gripper to release the rod *(command to your specific gripper)*
+#. Move back up to the pre-grasp pose *(position controlled)*
+#. Move to home pose *(position controlled)*
+
+
+.. _tips-on-skills:
+
+Level 3 – Tips on using skills
+------------------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 35 65
+
+   * - Goal
+     - Recommended approach
+   * - Establish contact with the surroundings
+     - Use a **guarded approach**.
+   * - Predictable linear motion with minimal jerk
+     - Use ``lin_time_optimal_ruckig``.
+   * - Follow a wall under constant force
+     - Use the pitasc **slide** skill.
+   * - End a skill on a condition
+     - Attach **monitors** to react to a force threshold or travelled distance.
+
+.. danger::
+   Always **tare the force/torque sensor** before running force-controlled
+   skills.
+
+.. tip::
+   Add **user confirms** between skills. This makes it much easier to spot
+   problems and abort execution safely while developing.
+
+
+.. _example-solution:
+
+Level 4 – Step-by-step sample solution
+--------------------------------------
+
+Preamble
+~~~~~~~~
+
+The preamble handles all imports of relevant models and configures the
+application environment, in which every component (robots, sensors, actuators)
+must be specified in order to be controlled later on. It also defines a boolean
+parameter to activate or deactivate all user confirmations at once.
+
+.. dropdown:: ``0_preamble.xml``
+   :icon: code
+   :color: light
+
+   .. literalinclude:: /_xml/real_world_tutorial/parkour_0/0_preamble.xml
+      :language: xml
+
+Homing sequence for the gripper
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This short skill sequence commands the WSG 50-110 gripper to run its homing
+sequence.
+
+.. dropdown:: ``0.1_home_gripper.xml``
+   :icon: code
+   :color: light
+
+   .. literalinclude:: /_xml/real_world_tutorial/parkour_0/0.1_home_gripper.xml
+      :language: xml
+
+Step 1: Pick up the rod from the holder
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Picks up the rod from its holder and carries it to the robot's home pose.
+
+.. dropdown:: ``1_pick_rod.xml``
+   :icon: code
+   :color: light
+
+   .. literalinclude:: /_xml/real_world_tutorial/parkour_0/1_pick_rod.xml
+      :language: xml
+
+Step 2: Solve the maze
+~~~~~~~~~~~~~~~~~~~~~~
+
+Guides the rod through the maze from the start pose to the end goal.
+
+.. dropdown:: ``2.1_solve_puzzle.xml`` - invocation
+   :icon: code
+   :color: light
+
+   .. literalinclude:: /_xml/real_world_tutorial/parkour_0/2.1_solve_puzzle.xml
+      :language: xml
+
+.. dropdown:: ``2.0_solve_maze_skill.xml`` - definition of ``skill_solve_puzzle``
+   :icon: code
+   :color: light
+
+   .. literalinclude:: /_xml/real_world_tutorial/parkour_0/2.0_solve_maze_skill.xml
+      :language: xml
+
+Step 3: Place the rod back into the holder
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Places the rod back into its holder and returns the robot to its home pose.
+
+.. dropdown:: ``3_place_rod.xml``
+   :icon: code
+   :color: light
+
+   .. literalinclude:: /_xml/real_world_tutorial/parkour_0/3_place_rod.xml
+      :language: xml
+
+
+Complete sample solution
+------------------------
+
+For completeness, the full application is shown below. It includes all
+previously described steps, from homing the gripper to placing the rod back in
+the workpiece carrier.
+
+.. dropdown:: ``4_complete_application.xml`` - full application
+   :icon: file-code
+   :color: primary
+
+   .. literalinclude:: /_xml/real_world_tutorial/parkour_0/4_complete_application.xml
+      :language: xml
+      :linenos:
