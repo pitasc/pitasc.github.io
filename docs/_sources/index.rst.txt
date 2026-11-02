@@ -32,6 +32,27 @@ Applications
 .. grid:: 1 2 2 2
    :gutter: 3
 
+
+   .. grid-item-card:: Automated disassembly of battery modules
+      :link: https://www.youtube.com/watch?v=wtR413ipMtQ
+      :img-top: _static/applications/demobat.png
+      :class-card: sd-shadow-sm
+
+      Disassembly of automotive battery modules.
+
+      +++
+      :octicon:`video;1em` Watch on YouTube
+
+   .. grid-item-card:: Smart battery removal from robot vacuum cleaners
+      :link: https://www.youtube.com/watch?v=hrnt9gLvo60
+      :img-top: _static/applications/desire4electronics.png
+      :class-card: sd-shadow-sm
+
+      Disassembly of Batteries from Robot Vacuum Cleaner.
+
+      +++
+      :octicon:`video;1em` Watch on YouTube
+
    .. grid-item-card:: Assembly of plastic components
       :link: https://www.youtube.com/watch?v=s0nBJR_MGwM
       :img-top: _static/applications/plastic_assembly.png
@@ -72,6 +93,23 @@ Applications
       +++
       :octicon:`video;1em` Watch on YouTube
 
+Acknowledgements
+================
+
+.. |rig_logo| image:: _static/acknowledgements/riglogo.png
+   :target: https://robotics-institute-germany.de/
+   :alt: Robotics Institute Germany
+
+.. |eurobin_logo| image:: _static/acknowledgements/eurobinlogo.png
+   :target: https://www.eurobin-project.eu/
+   :alt: euROBIN project
+
+.. list-table::
+   :widths: 50 50
+   :align: center
+
+   * - |rig_logo|
+     - |eurobin_logo|
 
 .. toctree::
    :maxdepth: 2

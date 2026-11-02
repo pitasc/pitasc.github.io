@@ -278,7 +278,7 @@ Level 2 – Example steps in detail
    home pose by linear movement.
 
 Step 1 - Pick up the rod from the holder
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Move to home pose *(position controlled)*
 #. Move to a position above the workpiece carrier *(position controlled)*
@@ -314,7 +314,7 @@ Step 2 - Solve the maze
 #. Move to home pose *(position controlled)*
 
 Step 3 - Place the rod back into the holder
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Move to home pose *(position controlled)*
 #. Move to a position above the workpiece carrier *(position controlled)*
@@ -388,7 +388,7 @@ sequence.
       :language: xml
 
 Step 1: Pick up the rod from the holder
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Picks up the rod from its holder and carries it to the robot's home pose.
 
@@ -419,7 +419,7 @@ Guides the rod through the maze from the start pose to the end goal.
       :language: xml
 
 Step 3: Place the rod back into the holder
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Places the rod back into its holder and returns the robot to its home pose.
 

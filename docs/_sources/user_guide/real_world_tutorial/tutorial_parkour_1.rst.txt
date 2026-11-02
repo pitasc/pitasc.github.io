@@ -358,7 +358,7 @@ Step 1 - Pick up
 #. Move to home pose *(position controlled)*
 
 Step 2 - Insert into guide 1 *(chamfered)*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Move to home pose *(position controlled)*
 #. Move to a position above the contact position *(position controlled)*
@@ -384,7 +384,7 @@ Step 3 - Retrieve from guide 1
 #. Move to home pose *(position controlled)*
 
 Step 4 - Insert into guide 2 *(not chamfered)*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Move to home pose *(position controlled)*
 #. Move to a position above the contact position *(position controlled)*
@@ -419,7 +419,7 @@ Step 5 - Retrieve from guide 2
 #. Move to home pose *(position controlled)*
 
 Step 6 - Place in the workpiece carrier
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Move to home pose *(position controlled)*
 #. Move to a position above the workpiece carrier *(position controlled)*
@@ -495,7 +495,7 @@ sequence.
       :language: xml
 
 Step 1: Pick up the workpiece from the carrier
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Picks up the T-piece and carries it to the robot's home pose.
 
@@ -562,7 +562,7 @@ direction** for sliding and for moving the T-piece away from the guide.
       :language: xml
 
 Step 6: Place in the workpiece carrier
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The final step places the T-piece back in the carrier. To prevent an unwanted
 collision in case the workpiece slipped during retrieval, the robot first moves
