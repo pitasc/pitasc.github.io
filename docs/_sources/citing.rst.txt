@@ -1,0 +1,67 @@
+Citing pitasc
+=============
+
+Software
+--------
+
+If you use pitasc in academic work, please cite the software:
+
+Pitasc Team, Fraunhofer Institute for Manufacturing Engineering and Automation.
+*pitasc* [Computer software]. Zenodo.
+https://doi.org/10.5281/zenodo.18744906
+
+BibTeX:
+
+.. code-block:: bibtex
+
+   @misc{fraunhoferipa_pitasc,
+     author    = {{Pitasc Team, Fraunhofer Institute for Manufacturing Engineering and Automation}},
+     title     = {pitasc},
+     publisher = {Zenodo},
+     doi       = {10.5281/zenodo.18744906},
+     url       = {https://doi.org/10.5281/zenodo.18744906}
+   }
+
+The Zenodo record also provides downloadable citation formats.
+
+Underlying research
+-------------------
+
+When discussing the underlying skill model, please also cite:
+
+*A Prototype-Based Skill Model for Specifying Robotic Assembly Tasks.*
+IEEE International Conference on Robotics and Automation (ICRA), 2018.
+
+DOI: `10.1109/ICRA.2018.8462885 <https://doi.org/10.1109/ICRA.2018.8462885>`_
+
+Use the publisher's citation export for the complete reference,
+including the authors.
+
+Documentation
+-------------
+
+If you refer specifically to this website's installation instructions,
+usage guide, or examples, cite the relevant page URL and include
+the date you accessed it.
+
+Suggested citation:
+
+Fraunhofer IPA. *pitasc documentation*. https://pitasc.github.io/.
+Accessed YYYY-MM-DD.
+
+BibTeX:
+
+.. code-block:: bibtex
+
+   @misc{fraunhoferipa_pitasc_docs,
+     author       = {{Pitasc Team, Fraunhofer Institute for Manufacturing Engineering and Automation}},
+     title        = {pitasc documentation},
+     howpublished = {\url{https://pitasc.github.io/}},
+     note         = {Accessed: YYYY-MM-DD}
+   }
+
+Replace YYYY-MM-DD with your access date. When citing a specific page,
+replace the homepage URL with that page's URL.
+
+The software DOI above identifies the archived software release,
+not this documentation website.

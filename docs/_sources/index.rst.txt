@@ -93,6 +93,17 @@ Applications
       +++
       :octicon:`video;1em` Watch on YouTube
 
+How to cite pitasc
+==================
+
+If you use pitasc in academic work, please cite the
+`software on Zenodo <https://doi.org/10.5281/zenodo.18744906>`_.
+See :doc:`citing` for citation formats and the underlying research paper.
+
+.. image:: _static/pitasc-doi.svg
+   :target: https://doi.org/10.5281/zenodo.18744906
+   :alt: pitasc software DOI
+
 Acknowledgements
 ================
 
@@ -145,5 +156,6 @@ Acknowledgements
    :caption: Appendix
    :hidden:
 
+   citing
    About <https://www.pitasc.fraunhofer.de/en.html>
    Contact <https://www.pitasc.fraunhofer.de/en/contact.html>

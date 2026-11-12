@@ -102,7 +102,7 @@ Tutorial details
 ================
 
 0 - Simple maze with a cylindrical peg
--------------------------------------
+--------------------------------------
 
 :doc:`tutorial_parkour_0`
 
