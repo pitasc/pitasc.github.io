@@ -1,0 +1,52 @@
+============
+Installation
+============
+
+.. rst-class:: tutorial-meta
+
+|badge-os| |badge-ros|
+
+.. |badge-os| image:: https://img.shields.io/badge/Ubuntu-20.04%20Focal-E95420?logo=ubuntu&logoColor=white
+.. |badge-ros| image:: https://img.shields.io/badge/ROS-Noetic-22314E?logo=ros&logoColor=white
+
+
+Software requirements
+=====================
+
+.. list-table::
+   :header-rows: 1
+   :widths: 22 18 60
+
+   * - Component
+     - Required
+     - Notes / Link
+   * - Ubuntu
+     - yes
+     - Focal ``20.04`` - other releases untested
+   * - ROS
+     - yes
+     - `ROS Noetic <https://wiki.ros.org/noetic>`__
+   * - pitasc
+     - yes
+     - See :doc:`../installation`
+   * - Frame editor (RQT plugin)
+     - yes
+     - `frame_editor <https://index.ros.org/p/frame_editor/#noetic>`__
+   * - Gripper driver
+     - model dependent
+     - e.g. `ipa325_wsg50 <https://github.com/ipa320/ipa325_wsg50>`__ for the Weiss WSG 50-110
+   * - PlotJuggler
+     - optional
+     - `PlotJuggler <https://github.com/facontidavide/PlotJuggler>`__ - monitor forces to avoid damaging your equipment
+
+.. note::
+
+   Instead of a native installation you can use a **Docker container** with
+   ROS Noetic and pitasc (GUI enabled).
+
+.. dropdown:: Install optional tooling (PlotJuggler)
+   :icon: package
+
+   .. code-block:: bash
+
+      sudo snap install plotjuggler-ros

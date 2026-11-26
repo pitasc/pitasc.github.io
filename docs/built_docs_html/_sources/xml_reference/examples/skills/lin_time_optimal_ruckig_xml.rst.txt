@@ -1,0 +1,26 @@
+===========================
+lin_time_optimal_ruckig.xml
+===========================
+
+This example application shows a minimal project.
+
+A UR5 moves to a target (LIN). Then the application terminates.
+
+Models used
+-----------
+
+* :doc:`../../scripts/script_measurement_logger`: lines 78, 92, 124, 141, 180, 195, 229, 244, 283, 298, 332, 347
+* :doc:`../../scripts/script_measurement_publisher`: lines 72, 85, 118, 134, 173, 189, 222, 238, 276, 292, 325, 341
+* :doc:`../../skills/skill_lin`: lines 50
+* :doc:`../../skills/skill_lin_time_optimal`: lines 56, 102
+* :doc:`../../skills/skill_lin_time_optimal_ruckig`: lines 157, 209, 260, 312
+* :doc:`../../skills/skill_sequence`: lines 41
+
+File contents
+-------------
+
+
+.. literalinclude:: lin_time_optimal_ruckig.xml
+    :language: xml
+    :linenos:
+    :emphasize-lines: 195,260,325,134,72,332,141,78,209,276,85,341,283,347,92,222,157,312,292,229,102,41,298,173,238,50,180,244,118,56,124,189

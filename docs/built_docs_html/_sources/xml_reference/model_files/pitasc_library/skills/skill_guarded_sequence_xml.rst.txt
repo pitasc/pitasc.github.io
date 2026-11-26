@@ -1,0 +1,18 @@
+==================================================
+pitasc_library - skills/skill_guarded_sequence.xml
+==================================================
+
+Model definitions
+-----------------
+
+* line 9: :doc:`skill_guarded_sequence <../../../skills/skill_guarded_sequence>`
+* line 94: :doc:`skill_guarded_sequence_with_start <../../../skills/skill_guarded_sequence_with_start>`
+
+File contents
+-------------
+
+
+.. literalinclude:: skill_guarded_sequence.xml
+    :language: xml
+    :linenos:
+    :emphasize-lines: 9,94

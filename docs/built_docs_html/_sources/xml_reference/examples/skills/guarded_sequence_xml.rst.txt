@@ -1,0 +1,24 @@
+====================
+guarded_sequence.xml
+====================
+
+This example application shows the usage of some force skills with guarded sequence.
+
+Models used
+-----------
+
+* :doc:`../../skills/skill_guarded_sequence`: lines 52
+* :doc:`../../skills/skill_guarded_sequence_with_start`: lines 94
+* :doc:`../../skills/skill_lin`: lines 46
+* :doc:`../../skills/skill_lin_time_optimal_ruckig`: lines 59, 65, 80, 86, 99, 106, 112, 127, 133
+* :doc:`../../skills/skill_relative_ptp`: lines 42
+* :doc:`../../skills/skill_sequence`: lines 34
+
+File contents
+-------------
+
+
+.. literalinclude:: guarded_sequence.xml
+    :language: xml
+    :linenos:
+    :emphasize-lines: 65,34,99,133,106,42,46,80,112,52,86,59,94,127

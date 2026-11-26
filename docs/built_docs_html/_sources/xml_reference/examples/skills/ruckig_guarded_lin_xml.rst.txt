@@ -1,0 +1,23 @@
+======================
+ruckig_guarded_lin.xml
+======================
+
+This example application shows the usage of a guarded_lin skill with ruckig and force sensor
+supervision.
+
+Models used
+-----------
+
+* :doc:`../../skills/skill_guarded_lin_ruckig`: lines 53
+* :doc:`../../skills/skill_lin_time_optimal_ruckig`: lines 47, 72, 78
+* :doc:`../../skills/skill_relative_ptp`: lines 43
+* :doc:`../../skills/skill_sequence`: lines 35
+
+File contents
+-------------
+
+
+.. literalinclude:: ruckig_guarded_lin.xml
+    :language: xml
+    :linenos:
+    :emphasize-lines: 35,53,72,43,78,47

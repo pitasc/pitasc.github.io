@@ -1,0 +1,589 @@
+.. _complex-maze-with-hatch:
+
+=========================================
+Complex Maze with Hatch - Cartesian Space
+=========================================
+
+.. admonition:: What you will learn
+   :class: tip
+
+   How to combine several of pitasc's most common skills - **linear
+   movements**, a **guarded approach** and different variants of the **slide**
+   skill. The application focus is twofold: **door opening**, which uses force
+   feedback to find the rotation axis of the hatch, and **force-guided maze
+   solving**, in which the peg is guided purely by contact forces.
+
+.. rst-class:: tutorial-meta
+
+:bdg-primary:`Level: advanced` :bdg-secondary:`door opening`
+:bdg-secondary:`force control` :bdg-info:`slope & curve following`
+
+
+.. contents:: On this page
+   :local:
+   :depth: 2
+
+
+Requirements
+============
+
+Hardware
+--------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Item
+     - Details
+   * - 3D printer
+     - For the parts listed in :ref:`p2-models`
+   * - Fasteners
+     - Screws ISO 4762 – M3x35 and nuts ISO 4032 – M3 (or comparable),
+       **7 pcs each**
+   * - Robot
+     - Any pitasc-compatible robot with a force/torque sensor.
+       This example uses a **UR5e** with a **Weiss WSG 50-110**.
+   * - Table *(recommended)*
+     - Welding table with 50 × 50 hole pattern, hole diameter 16 mm
+   * - Positioning bolts
+     - 16 mm, **4 – 6 pcs**
+
+Supported grippers
+------------------
+
+.. grid:: 1 2 2 4
+   :gutter: 2
+
+   .. grid-item-card:: Weiss WSG 50-110
+      :class-card: sd-shadow-sm
+
+      Used in this example. Requires **either**:
+
+      - ``F-WSG-FMF`` sensor fingers, **or**
+      - 2 × custom fingers (model 08 below)
+
+   .. grid-item-card:: Robotiq 2F-140
+      :class-card: sd-shadow-sm
+
+      Supported out of the box.
+
+   .. grid-item-card:: Robotiq 2F-85
+      :class-card: sd-shadow-sm
+
+      Supported out of the box.
+
+   .. grid-item-card:: Franka Hand
+      :class-card: sd-shadow-sm
+
+      Supported out of the box.
+
+
+.. _p2-models:
+
+Provided 3D models
+==================
+
+All models are hosted on GrabCAD and available as ``.step``, ``.stl`` and
+``.sldprt``.
+
+Station, hatch and handles
+--------------------------
+
+.. list-table::
+   :widths: 8 32 32 28
+   :header-rows: 1
+   :class: model-table
+
+   * - #
+     - Preview
+     - Part
+     - Downloads
+
+   * - 01
+     - .. image:: /_images/real_world_tutorial/parkour_0/01_bottom.png
+          :alt: Lower section of the station
+          :width: 100%
+     - **Lower section**
+
+       .. note::
+          Print with the **chamfer facing up**.
+     - | `.step <https://grabcad.com/library/base-plate-45/details?folder_id=14283186>`__
+       | `.stl <https://grabcad.com/library/base-plate-45/details?folder_id=14283188>`__
+       | `.sldprt <https://grabcad.com/library/base-plate-45/details?folder_id=14283187>`__
+
+   * - 02
+     - .. image:: /_images/real_world_tutorial/parkour_2/02_Maze.png
+          :alt: Upper section with maze
+          :width: 100%
+     - **Upper section with maze**
+
+       Contains the rectangular path, the slope and the final curve.
+
+       .. note::
+          Print with the **largest surface facing down**.
+     - | `.step <https://grabcad.com/library/simple-maze-1/details?folder_id=14283180>`__
+       | `.stl <https://grabcad.com/library/simple-maze-1/details?folder_id=14283179>`__
+       | `.sldprt <https://grabcad.com/library/simple-maze-1/details?folder_id=14283178>`__
+
+   * - 03
+     - .. image:: /_images/real_world_tutorial/parkour_2/03_Door.png
+          :alt: Door for the upper section
+          :width: 100%
+     - **Door / hatch**
+
+       Blocks the maze entrance until it is opened.
+
+       .. note::
+          Print with the **largest surface facing down**.
+     - | `.step <https://grabcad.com/library/03_door-1/details?folder_id=14287426>`__
+       | `.stl <https://grabcad.com/library/03_door-1/details?folder_id=14287425>`__
+       | `.sldprt <https://grabcad.com/library/03_door-1/details?folder_id=14287427>`__
+
+   * - 04
+     - .. image:: /_images/real_world_tutorial/parkour_2/04_Flat_handle.png
+          :alt: Flat door handle
+          :width: 100%
+     - **Flat handle** *(option A)*
+
+       .. note::
+          Print with the **largest surface facing down**.
+     - | `.step <https://grabcad.com/library/04_flat_handle-1/details?folder_id=14287430>`__
+       | `.stl <https://grabcad.com/library/04_flat_handle-1/details?folder_id=14287429>`__
+       | `.sldprt <https://grabcad.com/library/04_flat_handle-1/details?folder_id=14287431>`__
+
+   * - 05
+     - .. image:: /_images/real_world_tutorial/parkour_2/05_Sphere_handle.png
+          :alt: Spherical door handle
+          :width: 100%
+     - **Spherical handle** *(option B)*
+
+       .. note::
+          Print with the **largest surface facing down**.
+     - | `.step <https://grabcad.com/library/05_sphere_handle-1/details?folder_id=14287460>`__
+       | `.stl <https://grabcad.com/library/05_sphere_handle-1/details?folder_id=14287471>`__
+       | `.sldprt <https://grabcad.com/library/05_sphere_handle-1/details?folder_id=14287472>`__
+
+Peg, holder and gripper fingers
+-------------------------------
+
+.. list-table::
+   :widths: 8 32 32 28
+   :header-rows: 1
+   :class: model-table
+
+   * - #
+     - Preview
+     - Part
+     - Downloads
+
+   * - 06
+     - .. image:: /_images/real_world_tutorial/parkour_2/06_peg.png
+          :alt: Cylindrical peg
+          :width: 100%
+     - **Cylindrical peg**
+
+       The workpiece that is guided through the maze.
+     - | `.step <https://grabcad.com/library/cylindrical-peg-2/details?folder_id=14283165>`__
+       | `.stl <https://grabcad.com/library/cylindrical-peg-2/details?folder_id=14283166>`__
+       | `.sldprt <https://grabcad.com/library/cylindrical-peg-2/details?folder_id=14283167>`__
+
+   * - 07
+     - .. image:: /_images/real_world_tutorial/parkour_2/07_peg_holder.png
+          :alt: Peg holder
+          :width: 100%
+     - **Peg holder**
+
+       Defines the pick and place pose of the peg.
+     - | `.step <https://grabcad.com/library/peg_holder-1/details?folder_id=14283157>`__
+       | `.stl <https://grabcad.com/library/peg_holder-1/details?folder_id=14283158>`__
+       | `.sldprt <https://grabcad.com/library/peg_holder-1/details?folder_id=14283159>`__
+
+   * - 08
+     - .. image:: /_images/real_world_tutorial/parkour_0/05_gripper_finger.png
+          :alt: Custom prismatic gripper fingers
+          :width: 100%
+     - **Custom gripper fingers**
+
+       For the Weiss WSG 50-110 only.
+
+       .. note::
+          Print with the **largest surface facing down**.
+     - | `.step <https://grabcad.com/library/gripper-finger-2/details?folder_id=14283386>`__
+       | `.stl <https://grabcad.com/library/gripper-finger-2/details?folder_id=14283385>`__
+       | `.sldprt <https://grabcad.com/library/gripper-finger-2/details?folder_id=14283384>`__
+
+
+Setup
+=====
+
+Step 1 - Print the parts
+------------------------
+
+Print the lower and upper section, the cylindrical peg carrier and the cylindrical
+peg. Also as per your gripper, print the custom gripper fingers to hold the cylindrical peg.
+
+.. warning::
+   Tolerances were tested on a **Bambu Lab X1** - adjust if needed..
+
+Step 2 - Assemble the station
+-----------------------------
+
+Assemble the lower and upper section using the screws and nuts.
+
+.. figure:: /_images/real_world_tutorial/parkour_0/09_complex_maze_assembly.png
+   :alt: Assembling the parts
+   :width: 90%
+   :align: center
+
+   Assembly of the 3D-printed parts with bottom stand and top layer with complex maze.
+
+
+Step 3 - Attach the handle
+--------------------------
+
+Attach the desired handle (flat or spherical) to the side of the hatch using an
+M3x25 screw and an M3 nut.
+
+.. figure:: /_images/real_world_tutorial/parkour_2/05_attach_handle.png
+   :alt: Attaching the handle to the hatch
+   :width: 66%
+   :align: center
+
+   Handle mounted to the side of the hatch.
+
+Step 4 - Mount the hatch
+------------------------
+
+Attach the hatch to the base maze part using two M3x25 screws and two M3 nuts.
+
+.. warning::
+   Tighten the nuts only **slightly**, so that the hatch can still rotate
+   freely. An over-tightened hatch distorts the force feedback used to estimate
+   the hinge axis.
+
+.. figure:: /_images/real_world_tutorial/parkour_2/10_attach_the_door.png
+   :alt: Attaching the hatch to the maze
+   :width: 66%
+   :align: center
+
+   Hatch mounted to the upper maze section.
+
+Step 5 - Clamp everything to the table
+--------------------------------------
+
+Place the maze and the peg holder on your welding table and fix them with the
+positioning bolts.
+
+.. figure:: /_images/real_world_tutorial/parkour_2/p2_example_configuration.png
+   :alt: Complete setup on the welding table
+   :width: 90%
+   :align: center
+
+   Example configuration, allowing easy access to both the peg holder and the
+   maze entrance.
+
+Step 6 - Mount the gripper fingers
+----------------------------------
+
+If needed, screw the custom 3D-printed gripper fingers onto the Weiss
+WSG 50-110 gripper.
+
+
+How to solve this parkour task
+==============================
+
+The task consists of several sub-tasks:
+
+#. Open the hatch while continuously gripping the installed handle.
+#. Pick up the cylindrical peg.
+#. Push the peg down at the start of the maze.
+#. Guide the peg along the upper path, keeping contact with the maze surface at
+   all times.
+#. Glide down the slope until the downward curve is reached.
+#. Follow the curve and guide the peg into the target opening.
+#. Place the peg back in the peg holder.
+
+.. tab-set::
+
+   .. tab-item:: Example run
+
+      .. video:: /_videos/real_world_tutorial/parkour_2/pitasc_realworld_tutorial_2.mp4
+         :width: 100%
+
+         Exemplary solution of the maze.
+
+   .. tab-item:: Intended path
+
+      .. figure:: /_images/real_world_tutorial/parkour_2/00_Maze_intended_path.png
+         :alt: Intended path of the peg through the maze
+         :width: 100%
+         :align: center
+
+         Intended path of the peg from start to target opening.
+
+.. admonition:: Why the hatch matters
+   :class: note
+
+   The hinge position and axis of rotation are **not taught in advance**. They
+   are estimated online from force feedback while the gripper holds the handle,
+   which makes the skill robust against small placement errors of the station.
+
+Try it yourself
+---------------
+
+.. card:: Where to put your solution
+
+   Add your solution to:
+
+   .. code-block:: text
+
+      .../pitasc_realworld_tutorial_p2/apps/parkour_2.xml
+
+   Then start RViz and the frame editor with:
+
+   .. code-block:: bash
+
+      roslaunch pitasc_realworld_tutorial_p2 bringup_ur5_parkour_2.launch
+
+.. admonition:: Increasing levels of assistance
+   :class: important
+
+   The following sections progressively reveal more detail. Stop reading at
+   whichever level still leaves you with an interesting challenge.
+
+   #. :ref:`p2-rough-steps` - the four high-level actions
+   #. :ref:`p2-example-steps` - every individual motion, no code
+   #. :ref:`p2-tips` - which pitasc skills to reach for
+   #. :ref:`p2-solution` - the full annotated XML
+
+
+.. _p2-rough-steps:
+
+Level 1 – Rough steps
+---------------------
+
+The sample solution comprises the following rough steps. Each step is
+implemented as a skill sequence containing several skills:
+
+#. Pick up the peg from the peg holder.
+#. Place the peg back in the peg holder.
+#. Open the hatch that blocks the maze.
+#. Solve the maze by guiding the peg along the path while keeping it in contact
+   with the maze surface.
+
+
+.. _p2-example-steps:
+
+Level 2 – Example steps in detail
+---------------------------------
+
+.. note::
+   For safety reasons, each step begins and ends with the robot moving to its
+   home pose by linear movement.
+
+Step 1 - Pick up the peg
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Move to home pose *(position controlled)*
+#. Move to a position above the peg holder *(position controlled)*
+#. Lower the end effector to the gripping position *(position controlled)*
+#. Grip the cylindrical peg *(command to your specific gripper)*
+#. Push down on the peg to ensure a safe grip
+   *(force controlled - only needed for flat gripper fingers)*
+#. Move upwards *(position controlled)*
+#. Move to home pose *(position controlled)*
+
+Step 2 - Place down the peg
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Move to home pose *(position controlled)*
+#. Move to a position above the peg holder *(position controlled)*
+#. Move close to the cylindrical opening *(position controlled)*
+#. Establish contact between peg and opening *(force controlled)*
+#. Push down to ensure the peg is seated inside the opening
+   *(force controlled)*
+#. Release the grip *(command to your specific gripper)*
+#. Move upwards *(position controlled)*
+#. Move to home pose *(position controlled)*
+
+Step 3 - Open the hatch
+~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Move to home pose *(position controlled)*
+#. Ensure the gripper is open *(command to your specific gripper)*
+#. Move the gripper to a horizontal pose above the handle
+   *(position controlled)*
+#. Move the gripper to the grasp pose for the handle *(position controlled)*
+#. Grip the handle *(command to your specific gripper)*
+#. Rotate around the hatch hinge axis while still gripping the handle
+   *(force and position controlled)*
+#. Release the handle *(command to your specific gripper)*
+#. Move to home pose *(position controlled)*
+
+Step 4 - Solve the maze
+~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Move to home pose *(position controlled)*
+#. Move the peg above the maze start position *(position controlled)*
+#. Establish contact between peg and maze *(force controlled)*
+#. Slide while pushing down until a high force signals that a wall has been
+   hit; change direction and slide again. Repeat until a certain depth is
+   reached *(velocity, position and force controlled)*
+#. On entering the slope, press down to determine the surface normal
+   *(force controlled)*
+#. Orient the peg along the direction of the normal force while pressing down
+   *(position and force controlled)*
+#. Slide down the slope while pushing down, until a high force signals the end
+   of the slope *(velocity, position and force controlled)*
+#. Rotate the peg upright, then push against the outside/inside of the curve
+   while moving along the curve *(velocity, position and force controlled)*
+#. Push the peg into the final target opening *(force controlled)*
+#. Move upwards *(position controlled)*
+#. Move to home pose *(position controlled)*
+
+.. tip::
+   The slope is the critical section: re-estimating the surface normal before
+   sliding gives you a **well-defined contact state**, so the sliding direction
+   and the pressing direction stay decoupled.
+
+
+.. _p2-tips:
+
+Level 3 – Tips on using skills
+------------------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 35 65
+
+   * - Goal
+     - Recommended approach
+   * - Press down *and* move at the same time
+     - Combine both motions in a **skill concurrency**.
+   * - Establish contact with the surroundings
+     - Use a **guarded approach**.
+   * - Predictable linear motion with minimal jerk
+     - Use ``lin_time_optimal_ruckig``.
+   * - Follow a wall, slope or curve under constant force
+     - Use the pitasc **slide** skill.
+   * - End a skill on a condition
+     - Attach **monitors** to react to a force threshold or travelled distance.
+   * - Align the tool with an unknown surface
+     - Press down, read the measured force direction and orient the peg along
+       the resulting normal.
+
+.. danger::
+   **Tare the force/torque sensor before every force-controlled skill.**
+   This is the single most important step for reliable real-world operation -
+   an untared sensor makes the measured contact force meaningless and can
+   damage the peg, the hatch or the station.
+
+.. tip::
+   Add **user confirms** between skills. This makes it much easier to spot
+   problems and abort execution safely while developing.
+
+
+.. _p2-solution:
+
+Level 4 – Step-by-step sample solution
+--------------------------------------
+
+Preamble
+~~~~~~~~
+
+The preamble handles all imports of relevant models and configures the
+application environment, in which every component (robots, sensors, actuators)
+must be specified in order to be controlled later on. It also defines a boolean
+parameter to activate or deactivate all user confirmations at once.
+
+.. dropdown:: ``0_preamble.xml``
+   :icon: code
+   :color: light
+
+   .. literalinclude:: /_xml/real_world_tutorial/parkour_2/0_preamble.xml
+      :language: xml
+
+Homing sequence for gripper and robot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This short skill sequence commands the WSG 50-110 gripper to run its homing
+sequence. Afterwards the robot moves to its initial home pose.
+
+.. dropdown:: ``0.1_home_robot.xml``
+   :icon: code
+   :color: light
+
+   .. literalinclude:: /_xml/real_world_tutorial/parkour_2/0.1_home_robot.xml
+      :language: xml
+
+Step 1: Pick up the peg
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Picks up the peg from the cylindrical peg holder and carries it to the robot's
+home pose.
+
+.. dropdown:: ``1_pick_up_peg.xml``
+   :icon: code
+   :color: light
+
+   .. literalinclude:: /_xml/real_world_tutorial/parkour_2/1_pick_up_peg.xml
+      :language: xml
+
+Step 2: Place down the peg
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Places the peg back in the peg holder. The robot first moves to a position just
+above the holder, then gently establishes contact and pushes the peg into the
+opening.
+
+.. dropdown:: ``2_place_down_peg.xml``
+   :icon: code
+   :color: light
+
+   .. literalinclude:: /_xml/real_world_tutorial/parkour_2/2_place_down_peg.xml
+      :language: xml
+
+Step 3: Open the hatch
+~~~~~~~~~~~~~~~~~~~~~~
+
+To solve the maze, the hatch has to be opened first. The following skill grips
+the horizontally oriented handle and rotates until the hatch can be released
+and falls into its open position.
+
+.. dropdown:: ``3_open_hatch.xml``
+   :icon: code
+   :color: light
+
+   .. literalinclude:: /_xml/real_world_tutorial/parkour_2/3_open_hatch.xml
+      :language: xml
+
+Step 4: Solve the maze
+~~~~~~~~~~~~~~~~~~~~~~
+
+Solving the maze involves multiple challenges: navigating the upper rectangular
+path, sliding down the steep slope, following the downward curve and finally
+pushing the peg into the target hole.
+
+.. dropdown:: ``4_solve_maze.xml``
+   :icon: code
+   :color: light
+
+   .. literalinclude:: /_xml/real_world_tutorial/parkour_2/4_solve_maze.xml
+      :language: xml
+
+
+Complete sample solution
+------------------------
+
+For completeness, the full application is shown below. It includes all
+previously described steps, from homing the gripper to placing the cylindrical
+peg back in the peg holder.
+
+.. dropdown:: ``5_complete_application.xml`` - full application
+   :icon: file-code
+   :color: primary
+
+   .. literalinclude:: /_xml/real_world_tutorial/parkour_2/5_complete_application.xml
+      :language: xml
+      :linenos:
