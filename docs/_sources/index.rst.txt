@@ -35,7 +35,7 @@ Applications
 
    .. grid-item-card:: Automated disassembly of battery modules
       :link: https://www.youtube.com/watch?v=wtR413ipMtQ
-      :img-top: _static/applications/demobat.png
+      :img-top: _static/applications/demobat.webp
       :class-card: sd-shadow-sm
 
       Disassembly of automotive battery modules.
@@ -45,7 +45,7 @@ Applications
 
    .. grid-item-card:: Smart battery removal from robot vacuum cleaners
       :link: https://www.youtube.com/watch?v=hrnt9gLvo60
-      :img-top: _static/applications/desire4electronics.png
+      :img-top: _static/applications/desire4electronics.webp
       :class-card: sd-shadow-sm
 
       Disassembly of Batteries from Robot Vacuum Cleaner.
@@ -55,7 +55,7 @@ Applications
 
    .. grid-item-card:: Assembly of plastic components
       :link: https://www.youtube.com/watch?v=s0nBJR_MGwM
-      :img-top: _static/applications/plastic_assembly.png
+      :img-top: _static/applications/plastic_assembly.webp
       :class-card: sd-shadow-sm
 
       Force-controlled joining of tight-tolerance parts.
@@ -65,7 +65,7 @@ Applications
 
    .. grid-item-card:: Riveting, screwing & clipping
       :link: https://www.youtube.com/watch?v=1_VV98WQyMI
-      :img-top: _static/applications/riveting_screwing.png
+      :img-top: _static/applications/riveting_screwing.webp
       :class-card: sd-shadow-sm
 
       Classic fastening processes under force control.
@@ -75,7 +75,7 @@ Applications
 
    .. grid-item-card:: Fleible Assembly
       :link: https://www.youtube.com/watch?v=XGdiYxBxXGk
-      :img-top: _static/applications/flexible_assembly.png
+      :img-top: _static/applications/flexible_assembly.webp
       :class-card: sd-shadow-sm
 
       Flexible robot cells that are quickly retooled.
@@ -85,7 +85,7 @@ Applications
 
    .. grid-item-card:: Automated wiring of electrical cabinets
       :link: https://www.youtube.com/watch?v=xXR2FxPVqa4
-      :img-top: _static/applications/cabinet_wiring.png
+      :img-top: _static/applications/cabinet_wiring.webp
       :class-card: sd-shadow-sm
 
       Coordinated control of two robot arms.

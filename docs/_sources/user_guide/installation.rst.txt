@@ -60,9 +60,11 @@ To install pitasc, you need to download the installer or retrieve it from the `p
 
 1. Download the installer
 
-    - `From Gitlab <https://gitlab.cc-asp.fraunhofer.de/ipa325_public/packages/-/packages/48228>`_
+    - `For Public <https://dlzaeo.s.gy/W03Egg>`_
 
-    - Just download the lastest (first) file `without` ``rl`` in the name, eg. ``pitasc-noetic_4.1.0-r127_2024-02-05_amd64.tar.xz``.
+    - `For internal use <https://gitlab.cc-asp.fraunhofer.de/ipa325_public/packages/-/packages/48228>`_
+
+    - Just download the lastest (first) file `without` ``rl`` in the name, e.g., ``pitasc-noetic_4.1.0-r127_2024-02-05_amd64.tar.xz``.
 
 
 
